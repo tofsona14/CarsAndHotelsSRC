@@ -1,0 +1,791 @@
+/* .choosed--Cars {
+  opacity: 0.4;
+} */
+.Main--Cars {
+  /* background-image: url("../Photos/d.jpg"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1 !important;
+}
+.body--Cars {
+  background-color: rgb(29, 28, 28);
+  height: 89vh;
+  display: flex;
+}
+.body--Cars--First {
+  background-color: rgba(75, 30, 30, 0.753);
+  /* background-color: rgba(27, 27, 61, 0.524); */
+  border-end-end-radius: 80px;
+  border-start-end-radius: 80px;
+  width: 20vw;
+  height: 98%;
+  display: grid;
+  grid-template-rows: 0.2fr 1fr;
+}
+.body--Cars--Second {
+  width: 100%;
+  height: 99%;
+  position: relative;
+  color: white;
+}
+.body--Cars--First h1 {
+  color: rgb(255, 251, 249);
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+ul {
+  height: 1vh;
+}
+.li-Icons {
+  cursor: pointer;
+  color: white;
+  display: flex;
+  border-radius: 5px;
+}
+.li-icons img {
+}
+.li-Icons:hover {
+  opacity: 0.5;
+}
+.li-Icons--choosed {
+  color: white;
+  display: flex;
+  border-bottom: solid white;
+  border-radius: 5px;
+}
+.icon--ul img {
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+}
+
+.body--Cars--First--h1 {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a2828;
+  border-start-end-radius: 80px;
+}
+.Search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: none;
+  border-style: none;
+}
+
+.Search button {
+  font-weight: bold;
+  border-style: none;
+}
+.searchAndIcon {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  height: 30%;
+
+  border-radius: 15px;
+}
+.search--Icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  color: rgba(3, 3, 3, 0.918);
+  height: 115%;
+  opacity: 0.8;
+}
+.Search::placeholder {
+  font-size: 16px;
+}
+.body--Cars--First--Filters--First {
+  border-top: 3px solid rgba(216, 149, 72, 0.74);
+  width: 20vw;
+}
+.body--Cars--First--Filters--Second {
+}
+.button--h3 {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  border-bottom: 3px solid rgba(216, 149, 72, 0.74);
+}
+.button--h3se {
+  color: white;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+}
+.button--h3s {
+  font-size: 13px;
+  position: absolute;
+  margin-top: 13%;
+  height: 13vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  z-index: 0;
+  border: none;
+  background-color: #2a2828;
+  border-end-end-radius: 80px;
+}
+.button--h3s button {
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+  border: none;
+  color: black !important;
+}
+
+.body--Cars--First--Filters--First--Inputs button {
+  height: 30%;
+  border-radius: 20px;
+  width: 80%;
+  background-color: none;
+  color: white;
+}
+.body--Cars--First--Filters--First--Inputs {
+  width: 100%;
+  display: grid;
+  height: 97%;
+  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+}
+.prices {
+  z-index: 0;
+  display: flex;
+  font-weight: bold;
+  position: relative;
+}
+.header--Main {
+  border-bottom: 1px solid white;
+}
+
+/* dropdown */
+.dropdown {
+  border-radius: 15px;
+  z-index: 4;
+  position: relative;
+  width: 80%;
+  height: 5vh;
+  background-color: none;
+}
+.dropdowns {
+  z-index: 3;
+  position: relative;
+  width: 80%;
+  height: 5vh;
+}
+.dropdownss {
+  z-index: 2;
+  position: relative;
+  width: 40%;
+}
+.dropdownsss {
+  border-radius: 15px;
+  z-index: 1;
+  position: relative;
+  width: 80%;
+  height: 5vh;
+}
+.dropdown-btn {
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.dropdown-btn:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.dropdown-content--clicked {
+  border-radius: 15px;
+  margin-top: 14px;
+  z-index: 2;
+  max-height: 40vh;
+  overflow-y: auto;
+  display: block;
+  background-color: white;
+  color: black;
+}
+.dropdown-content--offClicked {
+  display: none;
+  background-color: none;
+}
+.dropdown-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-right: 4%;
+  align-items: center;
+  height: 5vh;
+}
+.dropdown-item:hover {
+  opacity: 0.8;
+}
+.dropdown-btn-witharrow {
+  position: relative;
+  display: flex;
+  z-index: 0;
+  border-radius: 15px;
+}
+
+.arrowDown {
+  cursor: pointer;
+  width: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  z-index: 1;
+  position: absolute;
+  right: 10px;
+}
+.arrowDown {
+}
+.arrowUp {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  z-index: 1;
+  position: absolute;
+  right: 10px;
+  rotate: 180deg;
+}
+.slider {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 4px;
+  background-color: white;
+}
+
+.sliders {
+  width: 100%;
+  height: 10%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  border-bottom: 3px solid rgba(216, 149, 72, 0.74);
+}
+.submit--Button {
+}
+
+nav {
+  position: relative;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MinAndMax {
+  align-items: center;
+  position: relative;
+  height: 30%;
+  padding-bottom: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid rgba(216, 149, 72, 0.74);
+}
+.Search::placeholder {
+  font-size: 11px;
+}
+.Min {
+  display: flex;
+  font-size: bold;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 40%;
+  border-radius: 15px;
+  font-size: 13px;
+  background: white;
+  cursor: pointer;
+}
+.Min:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.Max {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  font-size: 13px;
+  width: 30%;
+  height: 40%;
+  align-items: center;
+  border-radius: 15px;
+  background: white;
+}
+.Max:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.Min-Max--Prices {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 80%;
+  height: 60%;
+  border: 15px;
+  font-size: 11px;
+}
+.first--Min {
+  position: absolute;
+  width: 30%;
+  height: 20vh;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.second--Max {
+  position: absolute;
+  right: 0;
+  height: 20vh;
+  width: 30%;
+  background-color: white;
+  overflow-y: auto;
+}
+.price--dropdown--min {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+  color: black;
+}
+.price--dropdown--max {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+  color: black;
+}
+
+.Slider--Main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider .thumb {
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  background: white;
+}
+.body--Cars--First--Filters--Second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.years--dropdowns {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.cars--Container {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column; /* Places items in a horizontal row */
+  grid-template-columns: repeat(auto, minmax(500px, auto));
+  grid-template-rows: repeat(2, auto);
+  grid-column-gap: 100px;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  width: 78.79vw;
+  height: 99%;
+  margin-left: 0.2vw;
+  scroll-behavior: smooth;
+}
+.cars--Container::-webkit-scrollbar {
+  border-radius: 3%;
+  height: 5px; /* Adjust the width as needed */
+  background-color: #3a3434; /* Background color of the scrollbar */
+}
+.cars--Container::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  height: 50%;
+  cursor: pointer;
+  background-color: white;
+}
+.cars--Each {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 80% !important;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 25px;
+  height: 80%;
+  margin-top: 5%;
+  background-color: rgba(75, 30, 30, 0.753);
+  /* background-color: #00000064; */
+
+  box-shadow: 0px 0px 10px 5px rgba(230, 227, 227, 0.75);
+}
+
+.cars--Each img {
+  border-start-start-radius: 25px;
+  border-start-end-radius: 25px;
+  border-end-start-radius: 50%;
+  border-end-end-radius: 50%;
+  width: 100% !important;
+  cursor: pointer;
+}
+.cars-image-name {
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-end-start-radius: 25px;
+  border-end-end-radius: 25px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.cars-image-name h2 {
+  display: flex;
+  justify-content: center;
+  color: rgb(216, 149, 72);
+  font-size: 15px;
+}
+.cars-image-name p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 13px;
+  height: 2%;
+}
+.price--fullView {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+}
+
+.cars--Each--Imgblur {
+  filter: blur(5px);
+  opacity: 0.7;
+  transition: 1s;
+}
+
+.Login {
+  position: relative;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgba(128, 128, 128, 0.534);
+  opacity: 0.9;
+}
+.contact--us {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.ourContactInfo {
+  width: 40%;
+}
+.contactusAndQuestions {
+  display: flex;
+  width: 80%;
+  height: 80%;
+}
+.Location {
+  width: 100%;
+  height: 30%;
+  background-color: #3a3434;
+}
+
+.login {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 30%;
+  height: 60%;
+  background-color: rgba(241, 233, 233, 0.89);
+  opacity: 0.9;
+}
+.login .closeIcon {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  border-radius: 100%;
+  border: solid white;
+  color: rgb(78, 74, 74);
+  position: absolute;
+  right: -1vw;
+  top: -2vh;
+  cursor: pointer;
+}
+.login--Inputs {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15%;
+  align-items: center;
+  gap: 20px;
+  height: 30%;
+  width: 100%;
+}
+.sss {
+  display: flex;
+  width: 80%;
+  height: 40%;
+  position: relative;
+}
+.iconUser {
+  width: 25px;
+  height: 100%;
+  position: absolute;
+  right: 5px;
+  opacity: 0.7;
+}
+.login--Inputs input {
+  border: none;
+  width: 100%;
+  border-radius: 15px;
+  height: 100%;
+}
+.afterLogin {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 15vh;
+  border-bottom: 1px solid gray;
+  position: relative;
+}
+.register {
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+.resetAndBut {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.exchange {
+  height: 40%;
+  width: 20%;
+  border-radius: 15px;
+}
+.lAndD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  color: black;
+  border-radius: 15px;
+  background-color: white;
+}
+.lAndD:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.lari {
+  opacity: 0.5;
+}
+.dolari {
+  opacity: 0.5;
+}
+.lari--Y {
+  color: rgb(71, 71, 16);
+}
+.Dollar--Y {
+  color: green;
+}
+
+.afterLogin button {
+  height: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.iconOfLogin {
+  position: relative;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 10%;
+}
+.resetAndBut p {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.logInButAndIcon {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border-radius: 12px;
+  height: 45%;
+  cursor: pointer;
+  border: solid black;
+  background-color: white;
+}
+.afterLogin p {
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.cars--Each:hover {
+  scale: 1.1;
+  transition: 1s;
+}
+.cars--Eachblur img {
+  width: 350px;
+  height: 280px;
+}
+/* .cars--Each:hover .cars--Each--Img {
+  filter: blur(5px);
+  opacity: 0.7;
+}
+
+/* This will reset the style for the element being hovered */
+/* .cars--Each--Img:hover {
+  filter: none;
+  opacity: 1;
+} */
+.left {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 5%;
+  height: 99%;
+  cursor: pointer;
+  z-index: 1;
+  /* background-color: rgba(75, 30, 30, 0.753); */
+}
+.left img {
+  width: 60px;
+  height: 60px;
+  rotate: 180deg;
+}
+
+.right {
+  position: absolute;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  width: 5%;
+  height: 99%;
+  cursor: pointer;
+  z-index: 1;
+  /* background-color: rgba(75, 30, 30, 0.753); */
+}
+.right img {
+  width: 60px;
+  height: 60px;
+}
+.cars--Arrow--Left {
+  position: absolute;
+  color: white;
+  height: 60px;
+  rotate: 90deg;
+  width: 70px;
+  cursor: pointer;
+}
+.cars--Arrow--Right {
+  position: absolute;
+  right: 1%;
+  color: white;
+  transform: translateX(-0%);
+  height: 60px;
+  rotate: 270deg;
+  width: 70px !important;
+  cursor: pointer;
+}
+
+.cars--Arrow--Right:hover {
+  opacity: 0.6;
+  scale: 1.2;
+  transition: 1s;
+}
+.cars--Arrow--Left:hover {
+  opacity: 0.6;
+  scale: 1.2;
+  transition: 1s;
+}
+@media (max-width: 1334px) {
+  .cars--Container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 1011px) {
+  .cars--Container {
+    grid-template-columns: 1fr;
+  }
+  .body--Cars {
+    grid-template-columns: 0.4fr 1fr;
+  }
+}

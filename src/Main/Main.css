@@ -1,0 +1,163 @@
+body {
+  font-size: 16px;
+  /* background-image: url("../Photos/d.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background-color: rgb(29, 28, 28);
+  /* background-color: rgb(14, 7, 11); */
+  /* background-color: rgb(35, 34, 34); */
+  /* background-color: rgb(74, 69, 78); */
+  /* background-color: rgb(82, 64, 64); */
+  /* background-color: rgb(77, 55, 55); */
+  z-index: 0;
+}
+.Main--Main {
+  /* background-color: rgba(83, 51, 39, 0.582); */
+}
+.header--Main {
+  position: relative;
+  width: 98.5vw;
+  height: 10vh;
+}
+.header--Main nav ul {
+  position: absolute;
+  top: 0;
+  width: 60vw;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  right: 0;
+}
+.header--Main nav .li-Icons--choosed--main {
+}
+.close {
+  width: 25px;
+  height: 15px;
+}
+
+.header--Main nav ul li {
+  font-family: "Niconne";
+  font-size: 12px;
+  font-weight: bold;
+  list-style-type: none;
+  color: white;
+  cursor: pointer;
+}
+.li-Icons--choosed--main {
+  color: white;
+  display: flex;
+  border-bottom: solid white;
+  border-radius: 5px;
+}
+.header--Main img {
+  width: 30px;
+  height: 20px;
+}
+.main--Main img {
+  cursor: pointer;
+  width: 99vw;
+  height: 80vh;
+  background-color: black;
+}
+.main--Main img:hover {
+  cursor: pointer;
+  width: 99vw;
+  height: 80vh;
+  opacity: 0.5;
+}
+.hotel:hover {
+  opacity: 0.5 !important;
+}
+.main--Main {
+  position: relative;
+}
+.ellipse-shape-divider {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%; /* Adjust as necessary */
+  left: 50%; /* Adjust as necessary */
+  transform: translate(-50%, -50%);
+  width: 100%; /* Adjust as necessary */
+  height: 20%; /* Adjust as necessary */
+  border-radius: 50%; /* This creates an ellipse */
+  background-color: rgb(29, 28, 28);
+  /* background-color: rgb(7, 5, 20); */
+  /* Adjust color/opacity as necessary */
+  overflow: hidden;
+}
+.cars--Hotels {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cars--Hotels2 {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(75, 30, 30, 0.753);
+}
+.cars--Hotels2 button {
+  border: solid black;
+  z-index: 2;
+  cursor: pointer;
+  background-color: rgba(216, 149, 72, 0.74);
+  border-radius: 40%;
+}
+.button--1 {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  top: 0%;
+}
+.button--2 {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  bottom: 20%;
+}
+.line {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 6%;
+  background-color: rgba(216, 149, 72, 0.575);
+}
+.line1 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6%;
+  background-color: rgba(216, 149, 72, 0.404);
+}
+.cars--Hotels2 h1 {
+  font-family: "Niconne";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+.choosed--Main {
+  opacity: 0.4;
+}
+@media (max-width: 871px) {
+  /* Styles for viewports that are at least 600 pixels wide */
+  .header--Main nav ul li {
+    font-size: 10px;
+  }
+}

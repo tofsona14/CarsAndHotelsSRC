@@ -1,0 +1,13 @@
+.Filter--Main {
+  width: 20vw;
+  background-color: rgba(75, 30, 30, 0.753);
+  /* background-color: rgba(27, 27, 61, 0.524); */
+  border-end-end-radius: 80px;
+  border-start-end-radius: 80px;
+  height: 90vh;
+  display: grid;
+  grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr;
+  grid-template-areas: "Filter--Search," "Filter--Marka", "Filter--Model",
+    "Filter--Model", "Filter--Model", "Filter--Model", "Filter--Model",
+    "Filter--Model";
+}
