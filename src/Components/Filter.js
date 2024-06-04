@@ -1,19 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slider";
 import "./Filter.css";
 const Filter = () => {
+  /* Sliders values */
   const MIN = 50;
   const MAX = 800;
   const [values, setValues] = useState([MIN, MAX]);
-  const filterDefault = {
-    Search: false,
-    Marka: false,
-    Model: false,
-    Year: [false, false],
-    Location: false,
-    Prices: [false, false, false],
-    PriceSlider: false,
-  };
+  /* Clicked states */
   const [filterState, setFilterStates] = useState({
     Search: false,
     Marka: false,
@@ -23,6 +16,62 @@ const Filter = () => {
     Prices: [false, false, false],
     PriceSlider: false,
   });
+  /* To avoid 2 button clicked */
+  const filterDefault = {
+    Search: false,
+    Marka: false,
+    Model: false,
+    Year: [false, false],
+    Location: false,
+    Prices: [false, false, false],
+    PriceSlider: false,
+  };
+  /* States of buttons */
+  const [allInput, setAllInput] = useState({
+    search: "",
+    chooseModel: 0,
+    location: ["ყველა", "თბილისი", "ბათუმი", "მესტია"],
+    arrow: {
+      0: "arrowDown",
+      1: "arrowDown",
+      2: "arrowDown",
+      3: "arrowDown",
+      4: "arrowDown",
+      5: "arrowDown",
+      6: "arrowDown",
+    },
+    choosedMarka: "მწარმოებელი",
+    afterChoosedMarka: ["ყველა", "Mercedes Benz", "Mazda", "Chevrolet", "Bmw"],
+    choosedModel: "მოდელი",
+    afterChooseModel: [
+      ["ყველა"],
+      ["CLS", "C-Class", "G-Class"],
+      ["Mazda-6", "Mazda-9"],
+      ["Chevrolet-Camaro"],
+      ["M5"],
+    ],
+    choosedLocation: "მდებარეობა",
+    afterChooseLocation: ["ყველა", "თბილისი", "ბათუმი", "მესტია"],
+    choosedStYear: "დან",
+    choosedNdYear: "მდე",
+    afterChooseYears: {
+      first: ["ყველა", 2024, 2023, 2022, 2021, 2020],
+      second: ["ყველა", 2024, 2023, 2022, 2021, 2020],
+    },
+    choosedPrice: values,
+    afterChoosePrice: {
+      first: [50, 100, 200, 300, 400, 500, 600, 700, 800],
+      second: [100, 200, 300, 400, 500, 600, 700, 800],
+    },
+  });
+  useEffect(() => {
+    setAllInput((prev) => {
+      const a = { ...prev };
+      a.choosedPrice[0] = values[0];
+      a.choosedPrice[1] = values[1];
+      return a;
+    });
+  }, [values]);
   return (
     <div className="Filter--Main">
       <div className="Filter--Search">
@@ -36,7 +85,13 @@ const Filter = () => {
               a.Search = true;
               return a;
             });
-            console.log(filterState);
+          }}
+          onChange={(arg) => {
+            setAllInput((prev) => {
+              const a = { ...prev };
+              a.search = arg.target.value;
+              return a;
+            });
           }}
         ></input>
       </div>
@@ -53,11 +108,31 @@ const Filter = () => {
               }
               return a;
             });
-            console.log(filterState);
           }}
-        ></div>
+        >
+          {allInput.choosedMarka}
+        </div>
         {filterState.Marka === true ? (
-          <div className="Filter--Marka--True">aa</div>
+          <div className="Filter--Marka--True">
+            {allInput.afterChoosedMarka.map((e, i) => {
+              return (
+                <div
+                  className="Filter--Dropdown--SameForEverone"
+                  onClick={() => {
+                    setAllInput((prev) => {
+                      const a = { ...prev };
+                      a.chooseModel = i;
+                      a.choosedMarka = e;
+                      return a;
+                    });
+                    setFilterStates(filterDefault);
+                  }}
+                >
+                  {e}
+                </div>
+              );
+            })}
+          </div>
         ) : null}
       </div>
       <div className="Filter--Model">
@@ -74,9 +149,29 @@ const Filter = () => {
               return a;
             });
           }}
-        ></div>
+        >
+          {allInput.choosedModel}
+        </div>
         {filterState.Model === true ? (
-          <div className="Filter--Model--True">aa</div>
+          <div className="Filter--Model--True">
+            {allInput.afterChooseModel[allInput.chooseModel].map((e, i) => {
+              return (
+                <div
+                  className="Filter--Dropdown--SameForEverone"
+                  onClick={() => {
+                    setAllInput((prev) => {
+                      const a = { ...prev };
+                      a.choosedModel = e;
+                      return a;
+                    });
+                    setFilterStates(filterDefault);
+                  }}
+                >
+                  {e}
+                </div>
+              );
+            })}
+          </div>
         ) : null}
       </div>
       <div className="Filter--Year">
@@ -94,9 +189,30 @@ const Filter = () => {
                 return a;
               });
             }}
-          ></div>
+          >
+            {allInput.choosedStYear}
+          </div>
           {filterState.Year[0] === true ? (
-            <div className="Filter--Years--St--True"> aa</div>
+            <div className="Filter--Years--St--True">
+              {" "}
+              {allInput.afterChooseYears.first.map((e, i) => {
+                return (
+                  <div
+                    className="Filter--Dropdown--SameForEverone"
+                    onClick={() => {
+                      setAllInput((prev) => {
+                        const a = { ...prev };
+                        a.choosedStYear = e;
+                        return a;
+                      });
+                      setFilterStates(filterDefault);
+                    }}
+                  >
+                    {e}
+                  </div>
+                );
+              })}
+            </div>
           ) : null}
           <div
             className="Filter--Years--Both--Nd"
@@ -111,9 +227,29 @@ const Filter = () => {
                 return a;
               });
             }}
-          ></div>
+          >
+            {allInput.choosedNdYear}
+          </div>
           {filterState.Year[1] === true ? (
-            <div className="Filter--Years--Nd--True">aa</div>
+            <div className="Filter--Years--Nd--True">
+              {allInput.afterChooseYears.second.map((e, i) => {
+                return (
+                  <div
+                    className="Filter--Dropdown--SameForEverone"
+                    onClick={() => {
+                      setAllInput((prev) => {
+                        const a = { ...prev };
+                        a.choosedNdYear = e;
+                        return a;
+                      });
+                      setFilterStates(filterDefault);
+                    }}
+                  >
+                    {e}
+                  </div>
+                );
+              })}
+            </div>
           ) : null}
         </div>
       </div>
@@ -131,9 +267,29 @@ const Filter = () => {
               return a;
             });
           }}
-        ></div>
+        >
+          {allInput.choosedLocation}
+        </div>
         {filterState.Location === true ? (
-          <div className="Filter--Location--True">aa</div>
+          <div className="Filter--Location--True">
+            {allInput.afterChooseLocation.map((e, i) => {
+              return (
+                <div
+                  className="Filter--Dropdown--SameForEverone"
+                  onClick={() => {
+                    setAllInput((prev) => {
+                      const a = { ...prev };
+                      a.choosedLocation = e;
+                      return a;
+                    });
+                    setFilterStates(filterDefault);
+                  }}
+                >
+                  {e}
+                </div>
+              );
+            })}
+          </div>
         ) : null}
       </div>
       <div className="Filter--Prices">
@@ -151,9 +307,29 @@ const Filter = () => {
                 return a;
               });
             }}
-          ></div>
+          >
+            {allInput.choosedPrice[0]}
+          </div>
           {filterState.Prices[0] === true ? (
-            <div className="Filter--Prices--Div--Min--True"></div>
+            <div className="Filter--Prices--Div--Min--True">
+              {allInput.afterChoosePrice.first.map((e, i) => {
+                return (
+                  <div
+                    className="Filter--Dropdown--SameForEverone"
+                    onClick={() => {
+                      setAllInput((prev) => {
+                        const a = { ...prev };
+                        a.choosedPrice[0] = e;
+                        return a;
+                      });
+                      setFilterStates(filterDefault);
+                    }}
+                  >
+                    {e}
+                  </div>
+                );
+              })}
+            </div>
           ) : null}
           <div className="Filter--Prices--Div--Exchange">
             <p>ლ</p>
@@ -173,9 +349,29 @@ const Filter = () => {
                 return a;
               });
             }}
-          ></div>
+          >
+            {allInput.choosedPrice[1]}
+          </div>
           {filterState.Prices[2] === true ? (
-            <div className="Filter--Prices--Div--Max--True">aa</div>
+            <div className="Filter--Prices--Div--Max--True">
+              {allInput.afterChoosePrice.second.map((e, i) => {
+                return (
+                  <div
+                    className="Filter--Dropdown--SameForEverone"
+                    onClick={() => {
+                      setAllInput((prev) => {
+                        const a = { ...prev };
+                        a.choosedPrice[1] = e;
+                        return a;
+                      });
+                      setFilterStates(filterDefault);
+                    }}
+                  >
+                    {e}
+                  </div>
+                );
+              })}
+            </div>
           ) : null}
         </div>
       </div>

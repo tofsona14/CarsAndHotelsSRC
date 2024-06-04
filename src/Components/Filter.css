@@ -28,6 +28,7 @@
   opacity: 0.4;
 }
 .Filter--Marka {
+  z-index: 5;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -38,21 +39,29 @@
   border-bottom: 2px solid rgba(216, 149, 72, 0.74);
 }
 .Filter--Marka--Div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
   width: 80%;
-  height: 40%;
+  height: 50%;
   background-color: white;
   cursor: pointer;
 }
 .Filter--Marka--True {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   background-color: white;
   width: 80%;
   height: 20vh;
   margin-top: 30vh;
   border-radius: 10px;
+  overflow-y: auto;
 }
 .Filter--Model {
+  z-index: 4;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -63,13 +72,19 @@
   border-bottom: 2px solid rgba(216, 149, 72, 0.74);
 }
 .Filter--Model--Div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
   width: 80%;
-  height: 40%;
+  height: 50%;
   background-color: white;
   cursor: pointer;
 }
 .Filter--Model--True {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   background-color: white;
   width: 80%;
@@ -78,6 +93,7 @@
   border-radius: 10px;
 }
 .Filter--Year {
+  z-index: 3;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -93,9 +109,12 @@
   display: flex;
   justify-content: space-between;
   width: 80%;
-  height: 40%;
+  height: 50%;
 }
 .Filter--Years--Both--St {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 15px;
   width: 40%;
@@ -103,6 +122,9 @@
   background-color: white;
 }
 .Filter--Years--St--True {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   background-color: white;
   width: 40%;
@@ -111,6 +133,9 @@
   border-radius: 10px;
 }
 .Filter--Years--Both--Nd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 15px;
   width: 40%;
@@ -118,6 +143,11 @@
   background-color: white;
 }
 .Filter--Years--Nd--True {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  align-items: center;
   position: absolute;
   background-color: white;
   width: 40%;
@@ -127,6 +157,7 @@
   border-radius: 10px;
 }
 .Filter--Location {
+  z-index: 2;
   position: relative;
   cursor: pointer;
   display: flex;
@@ -137,6 +168,9 @@
   border-bottom: 2px solid rgba(216, 149, 72, 0.74);
 }
 .Filter--Location--True {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
   position: absolute;
   background-color: white;
   width: 80%;
@@ -145,12 +179,16 @@
   border-radius: 10px;
 }
 .Filter--Location--Div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
   width: 80%;
-  height: 40%;
+  height: 50%;
   background-color: white;
 }
 .Filter--Prices {
+  z-index: 1;
   height: 100%;
   width: 100%;
   display: flex;
@@ -163,9 +201,12 @@
   display: flex;
   justify-content: space-between;
   width: 80%;
-  height: 40%;
+  height: 50%;
 }
 .Filter--Prices--Div--Min {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 15px;
   width: 30%;
@@ -173,6 +214,9 @@
   background-color: white;
 }
 .Filter--Prices--Div--Min--True {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
   position: absolute;
   background-color: white;
   width: 30%;
@@ -191,6 +235,9 @@
   background-color: white;
 }
 .Filter--Prices--Div--Max {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border-radius: 15px;
   width: 30%;
@@ -198,6 +245,9 @@
   background-color: white;
 }
 .Filter--Prices--Div--Max--True {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   background-color: white;
   width: 30%;
@@ -207,6 +257,7 @@
   right: 0;
 }
 .Filter--PriceSlider {
+  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -247,4 +298,36 @@
 .Filter--Submit--Button:active {
   opacity: 0.4;
   transform: scale(0.95);
+}
+
+/*Dropdown item Same Css */
+.Filter--Dropdown--SameForEverone {
+  width: 100%;
+  min-height: 5vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(216, 149, 72, 0.74);
+  cursor: pointer;
+  font-size: 13px;
+}
+.Filter--Dropdown--SameForEverone:hover {
+  opacity: 0.5;
+}
+.Filter--Marka--True,
+.Filter--Model--True,
+.Filter--Location--True,
+.Filter--Years--St--True,
+.Filter--Years--Nd--True,
+.Filter--Prices--Div--Min--True,
+.Filter--Prices--Div--Max--True {
+  overflow: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #bc4a4a #f1f1f1;
+}
+.Filter--Years--St--True,
+.Filter--Years--Nd--True,
+.Filter--Prices--Div--Min--True,
+.Filter--Prices--Div--Max--True {
+  margin-top: 7vh;
 }
