@@ -407,17 +407,9 @@ nav {
   align-items: center;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 1;
 }
 
-.slider .thumb {
-  cursor: pointer;
-  position: absolute;
-  border-radius: 50%;
-  width: 23px;
-  height: 23px;
-  background: white;
-}
 .body--Cars--First--Filters--Second {
   display: flex;
   justify-content: center;

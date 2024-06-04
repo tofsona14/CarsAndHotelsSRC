@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import Slider from "react-slider";
 import "./Filter.css";
 const Filter = () => {
+  const MIN = 50;
+  const MAX = 800;
+  const [values, setValues] = useState([MIN, MAX]);
   const filterDefault = {
     Search: false,
     Marka: false,
@@ -176,7 +180,13 @@ const Filter = () => {
         </div>
       </div>
       <div className="Filter--PriceSlider">
-        <div className="Filter--PriceSlider--Slider"></div>
+        <Slider
+          min={MIN}
+          max={MAX}
+          onChange={setValues}
+          className="slider"
+          value={values}
+        />
       </div>
       <div className="Filter--Submit">
         <button className="Filter--Submit--Button">Submit</button>
