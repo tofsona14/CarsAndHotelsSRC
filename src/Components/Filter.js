@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
+import DownArrow from "../Photos/down-arrow.svg";
 import Slider from "react-slider";
 import "./Filter.css";
-const Filter = () => {
+const Filter = forwardRef((props, ref) => {
   /* Sliders values */
   const MIN = 50;
   const MAX = 800;
@@ -31,15 +32,6 @@ const Filter = () => {
     search: "",
     chooseModel: 0,
     location: ["ყველა", "თბილისი", "ბათუმი", "მესტია"],
-    arrow: {
-      0: "arrowDown",
-      1: "arrowDown",
-      2: "arrowDown",
-      3: "arrowDown",
-      4: "arrowDown",
-      5: "arrowDown",
-      6: "arrowDown",
-    },
     choosedMarka: "მწარმოებელი",
     afterChoosedMarka: ["ყველა", "Mercedes Benz", "Mazda", "Chevrolet", "Bmw"],
     choosedModel: "მოდელი",
@@ -72,8 +64,9 @@ const Filter = () => {
       return a;
     });
   }, [values]);
+
   return (
-    <div className="Filter--Main">
+    <div className="Filter--Main" ref={ref}>
       <div className="Filter--Search">
         <input
           type="text"
@@ -111,6 +104,12 @@ const Filter = () => {
           }}
         >
           {allInput.choosedMarka}
+
+          <img
+            src={DownArrow}
+            alt="s"
+            className={filterState.Marka === true ? "arrowUps" : "arrowDowns"}
+          ></img>
         </div>
         {filterState.Marka === true ? (
           <div className="Filter--Marka--True">
@@ -151,6 +150,11 @@ const Filter = () => {
           }}
         >
           {allInput.choosedModel}
+          <img
+            src={DownArrow}
+            alt="s"
+            className={filterState.Model === true ? "arrowUps" : "arrowDowns"}
+          ></img>
         </div>
         {filterState.Model === true ? (
           <div className="Filter--Model--True">
@@ -191,6 +195,13 @@ const Filter = () => {
             }}
           >
             {allInput.choosedStYear}
+            <img
+              src={DownArrow}
+              alt="s"
+              className={
+                filterState.Year[0] === true ? "arrowUps" : "arrowDowns"
+              }
+            ></img>
           </div>
           {filterState.Year[0] === true ? (
             <div className="Filter--Years--St--True">
@@ -229,6 +240,13 @@ const Filter = () => {
             }}
           >
             {allInput.choosedNdYear}
+            <img
+              src={DownArrow}
+              alt="s"
+              className={
+                filterState.Year[1] === true ? "arrowUps" : "arrowDowns"
+              }
+            ></img>
           </div>
           {filterState.Year[1] === true ? (
             <div className="Filter--Years--Nd--True">
@@ -269,6 +287,13 @@ const Filter = () => {
           }}
         >
           {allInput.choosedLocation}
+          <img
+            src={DownArrow}
+            alt="s"
+            className={
+              filterState.Location === true ? "arrowUps" : "arrowDowns"
+            }
+          ></img>
         </div>
         {filterState.Location === true ? (
           <div className="Filter--Location--True">
@@ -309,6 +334,13 @@ const Filter = () => {
             }}
           >
             {allInput.choosedPrice[0]}
+            <img
+              src={DownArrow}
+              alt="s"
+              className={
+                filterState.Prices[0] === true ? "arrowUps" : "arrowDowns"
+              }
+            ></img>
           </div>
           {filterState.Prices[0] === true ? (
             <div className="Filter--Prices--Div--Min--True">
@@ -351,6 +383,13 @@ const Filter = () => {
             }}
           >
             {allInput.choosedPrice[1]}
+            <img
+              src={DownArrow}
+              alt="s"
+              className={
+                filterState.Prices[2] === true ? "arrowUps" : "arrowDowns"
+              }
+            ></img>
           </div>
           {filterState.Prices[2] === true ? (
             <div className="Filter--Prices--Div--Max--True">
@@ -389,6 +428,6 @@ const Filter = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Filter;

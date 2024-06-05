@@ -18,7 +18,8 @@ body {
 .header--Main {
   position: relative;
   width: 98.5vw;
-  height: 10vh;
+  height: 9.9vh;
+  border-bottom: 1px solid white;
 }
 .header--Main nav ul {
   position: absolute;
@@ -28,7 +29,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  right: 0;
+  right: 7px;
 }
 .header--Main nav .li-Icons--choosed--main {
 }

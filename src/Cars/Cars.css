@@ -13,28 +13,14 @@
   height: 89vh;
   display: flex;
 }
-.body--Cars--First {
-  background-color: rgba(75, 30, 30, 0.753);
-  /* background-color: rgba(27, 27, 61, 0.524); */
-  border-end-end-radius: 80px;
-  border-start-end-radius: 80px;
-  width: 20vw;
-  height: 98%;
-  display: grid;
-  grid-template-rows: 0.2fr 1fr;
-}
+
 .body--Cars--Second {
   width: 100%;
   height: 99%;
   position: relative;
   color: white;
 }
-.body--Cars--First h1 {
-  color: rgb(255, 251, 249);
-  font-size: 20px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+
 ul {
   height: 1vh;
 }
@@ -61,365 +47,6 @@ ul {
   background-color: yellow;
 }
 
-.body--Cars--First--h1 {
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2a2828;
-  border-start-end-radius: 80px;
-}
-.Search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  border: none;
-  border-style: none;
-}
-
-.Search button {
-  font-weight: bold;
-  border-style: none;
-}
-.searchAndIcon {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 80%;
-  height: 30%;
-
-  border-radius: 15px;
-}
-.search--Icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 5px;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  z-index: 1;
-  color: rgba(3, 3, 3, 0.918);
-  height: 115%;
-  opacity: 0.8;
-}
-.Search::placeholder {
-  font-size: 16px;
-}
-.body--Cars--First--Filters--First {
-  border-top: 3px solid rgba(216, 149, 72, 0.74);
-  width: 20vw;
-}
-.body--Cars--First--Filters--Second {
-}
-.button--h3 {
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: none;
-  border-bottom: 3px solid rgba(216, 149, 72, 0.74);
-}
-.button--h3se {
-  color: white;
-  font-size: 11px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: none;
-}
-.button--h3s {
-  font-size: 13px;
-  position: absolute;
-  margin-top: 13%;
-  height: 13vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  z-index: 0;
-  border: none;
-  background-color: #2a2828;
-  border-end-end-radius: 80px;
-}
-.button--h3s button {
-  font-size: 15px;
-  font-weight: bold;
-
-  cursor: pointer;
-  border: none;
-  color: black !important;
-}
-
-.body--Cars--First--Filters--First--Inputs button {
-  height: 30%;
-  border-radius: 20px;
-  width: 80%;
-  background-color: none;
-  color: white;
-}
-.body--Cars--First--Filters--First--Inputs {
-  width: 100%;
-  display: grid;
-  height: 97%;
-  grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
-}
-.prices {
-  z-index: 0;
-  display: flex;
-  font-weight: bold;
-  position: relative;
-}
-.header--Main {
-  border-bottom: 1px solid white;
-}
-
-/* dropdown */
-.dropdown {
-  border-radius: 15px;
-  z-index: 4;
-  position: relative;
-  width: 80%;
-  height: 5vh;
-  background-color: none;
-}
-.dropdowns {
-  z-index: 3;
-  position: relative;
-  width: 80%;
-  height: 5vh;
-}
-.dropdownss {
-  z-index: 2;
-  position: relative;
-  width: 40%;
-}
-.dropdownsss {
-  border-radius: 15px;
-  z-index: 1;
-  position: relative;
-  width: 80%;
-  height: 5vh;
-}
-.dropdown-btn {
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 5vh;
-  background-color: white;
-  color: black;
-  cursor: pointer;
-}
-.dropdown-btn:hover {
-  opacity: 0.5;
-  transition: 0.5s;
-}
-.dropdown-content--clicked {
-  border-radius: 15px;
-  margin-top: 14px;
-  z-index: 2;
-  max-height: 40vh;
-  overflow-y: auto;
-  display: block;
-  background-color: white;
-  color: black;
-}
-.dropdown-content--offClicked {
-  display: none;
-  background-color: none;
-}
-.dropdown-item {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  margin-right: 4%;
-  align-items: center;
-  height: 5vh;
-}
-.dropdown-item:hover {
-  opacity: 0.8;
-}
-.dropdown-btn-witharrow {
-  position: relative;
-  display: flex;
-  z-index: 0;
-  border-radius: 15px;
-}
-
-.arrowDown {
-  cursor: pointer;
-  width: 10px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  z-index: 1;
-  position: absolute;
-  right: 10px;
-}
-.arrowDown {
-}
-.arrowUp {
-  cursor: pointer;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  z-index: 1;
-  position: absolute;
-  right: 10px;
-  rotate: 180deg;
-}
-.slider {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  width: 80%;
-  height: 4px;
-  background-color: white;
-}
-
-.sliders {
-  width: 100%;
-  height: 10%;
-  margin-top: 10%;
-  display: flex;
-  justify-content: center;
-  font-size: 10px;
-  border-bottom: 3px solid rgba(216, 149, 72, 0.74);
-}
-.submit--Button {
-}
-
-nav {
-  position: relative;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.MinAndMax {
-  align-items: center;
-  position: relative;
-  height: 30%;
-  padding-bottom: 5px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 3px solid rgba(216, 149, 72, 0.74);
-}
-.Search::placeholder {
-  font-size: 11px;
-}
-.Min {
-  display: flex;
-  font-size: bold;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  height: 40%;
-  border-radius: 15px;
-  font-size: 13px;
-  background: white;
-  cursor: pointer;
-}
-.Min:hover {
-  opacity: 0.5;
-  transition: 0.5s;
-}
-.Max {
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  font-size: 13px;
-  width: 30%;
-  height: 40%;
-  align-items: center;
-  border-radius: 15px;
-  background: white;
-}
-.Max:hover {
-  opacity: 0.5;
-  transition: 0.5s;
-}
-.Min-Max--Prices {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  width: 80%;
-  height: 60%;
-  border: 15px;
-  font-size: 11px;
-}
-.first--Min {
-  position: absolute;
-  width: 30%;
-  height: 20vh;
-  background-color: white;
-  overflow-y: auto;
-}
-
-.second--Max {
-  position: absolute;
-  right: 0;
-  height: 20vh;
-  width: 30%;
-  background-color: white;
-  overflow-y: auto;
-}
-.price--dropdown--min {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 25%;
-  color: black;
-}
-.price--dropdown--max {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 25%;
-  color: black;
-}
-
-.Slider--Main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 1;
-}
-
-.body--Cars--First--Filters--Second {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.years--dropdowns {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-}
 .cars--Container {
   position: relative;
   display: grid;
@@ -428,9 +55,8 @@ nav {
   grid-template-rows: repeat(2, auto);
   grid-column-gap: 100px;
   overflow-x: auto; /* Enables horizontal scrolling */
-  width: 78.79vw;
+  width: 81.6vw;
   height: 99%;
-  margin-left: 0.2vw;
   scroll-behavior: smooth;
 }
 .cars--Container::-webkit-scrollbar {
@@ -711,8 +337,9 @@ nav {
 .left {
   position: absolute;
   display: flex;
+  justify-content: center;
   align-items: center;
-  width: 5%;
+  width: 3.35vw;
   height: 99%;
   cursor: pointer;
   z-index: 1;
@@ -726,10 +353,11 @@ nav {
 
 .right {
   position: absolute;
-  right: 0px;
+  right: 0vw;
   display: flex;
   align-items: center;
-  width: 5%;
+  justify-content: center;
+  width: 3.35vw;
   height: 99%;
   cursor: pointer;
   z-index: 1;

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./Main/Main.js";
 import Cars from "./Cars/Cars.js";
-import Filter from "./Components/Filter.js";
+import Filter from "./Components/filter.js";
 
 function App() {
   return (
