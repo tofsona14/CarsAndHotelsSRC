@@ -396,16 +396,18 @@ ul {
   scale: 1.2;
   transition: 1s;
 }
-@media (max-width: 1334px) {
-  .cars--Container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (max-width: 1011px) {
-  .cars--Container {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 1420px) {
   .body--Cars {
-    grid-template-columns: 0.4fr 1fr;
+    flex-direction: column;
+  }
+  .cars--Container {
+    border-start-start-radius: 30px;
+    border-left: 7px solid rgba(216, 149, 72, 0.74);
+    border-top: 7px solid rgba(216, 149, 72, 0.74);
+    border-end-end-radius: 30px;
+    border-right: 7px solid rgba(216, 149, 72, 0.74);
+    border-bottom: 7px solid rgba(216, 149, 72, 0.74);
+    margin-top: 5vh;
+    width: 97vw;
   }
 }
