@@ -7,8 +7,8 @@
   align-items: center;
   z-index: 6;
   position: absolute;
-  width: 99.5vw;
-  height: 99.5vh;
+  width: 99.9vw;
+  height: 99.9vh;
   background-color: rgba(128, 128, 128, 0.534);
 }
 .exit-icon {

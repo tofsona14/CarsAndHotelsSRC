@@ -108,6 +108,7 @@ const Main = () => {
   };
   const contactUpHandler = (arg) => {
     setContactsUp(arg);
+    setScrollFreezed(false);
   };
   return (
     <div className="Main--Main">
@@ -183,6 +184,7 @@ const Main = () => {
                 className="li-Icons"
                 onClick={() => {
                   setContacts(true);
+                  setScrollFreezed(true);
                 }}
               >
                 <img src={Contact}></img>
