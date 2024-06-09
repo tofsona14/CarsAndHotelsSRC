@@ -1,22 +1,45 @@
 .Filter--Main {
   width: 18vw;
-  background-color: rgba(75, 30, 30, 0.753);
+  background-color: rgb(75, 30, 30);
   /* background-color: rgba(27, 27, 61, 0.524); */
   height: 75vh;
   display: grid;
-  border-end-end-radius: 30px;
-  border-right: 7px solid rgba(216, 149, 72, 0.74);
-  border-bottom: 7px solid rgba(216, 149, 72, 0.74);
+  border-end-start-radius: 30px;
+  border-start-start-radius: 30px;
   grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr;
   grid-template-areas:
     "Filter--Search"
-    "Filter--Model"
     "Filter--Marka"
+    "Filter--Model"
     "Filter--Year"
     "Filter--Location"
     "Filter--Prices"
     "Filter--PriceSlider"
     "Filter--Submit";
+}
+.filter--Close {
+  z-index: 6;
+  position: absolute;
+  display: flex;
+  left: -1.2vw;
+}
+.filter--Close--Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: white;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.filter--Close--Button img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  width: 20px;
+  height: 20px;
 }
 .Filter--Main--Main--HideTag {
   display: none;
@@ -26,12 +49,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(29, 28, 28);
+  background-color: rgba(143, 98, 48, 0.729);
 }
 
 .Filter--Search--Button {
   width: 80%;
-  height: 30%;
+  height: 40%;
   background-color: white;
   border-radius: 15px;
   border: none;
@@ -50,7 +73,6 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  border-bottom: 2px solid rgb(29, 28, 28);
 }
 .Filter--Marka--Div {
   font-size: 14px;
@@ -78,7 +100,7 @@
 }
 .Filter--Model {
   grid-area: Filter--Model;
-  z-index: 5;
+  z-index: 4;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -86,7 +108,6 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  border-bottom: 2px solid rgb(29, 28, 28);
 }
 .Filter--Model--Div {
   font-size: 14px;
@@ -121,7 +142,6 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  border-bottom: 2px solid rgb(29, 28, 28);
 }
 
 .Filter--Years--Both {
@@ -191,7 +211,6 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  border-bottom: 2px solid rgb(29, 28, 28);
 }
 .Filter--Location--True {
   flex-direction: column;
@@ -224,7 +243,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid rgb(29, 28, 28);
 }
 .Filter--Prices--Div {
   font-size: 14px;
@@ -298,7 +316,6 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  border-bottom: 2px solid rgb(29, 28, 28);
 }
 .slider {
   position: absolute;
@@ -317,6 +334,7 @@
   height: 23px;
   background: white;
 }
+
 /* if needed sliders-thumbs
 .slider .thumb.thumb-0 {
 }
@@ -330,7 +348,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgb(29, 28, 28);
+  background-color: rgba(143, 98, 48, 0.729);
 }
 .Filter--Submit--Button {
   width: 80%;
@@ -352,7 +370,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid rgba(216, 149, 72, 0.74);
+  border-bottom: 1px solid rgba(222, 217, 212, 0.74);
   cursor: pointer;
   font-size: 13px;
 }
@@ -394,36 +412,44 @@
   transition: 0.4s;
 }
 @media (max-width: 1420px) {
-  .Filter--Main--Main--HideTag {
-    font-size: 20px;
-    color: white;
-    height: 4vh;
-    display: flex;
-  }
-  .Filter--Main--Main {
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+}
+@media (max-width: 1060px) {
   .Filter--Main {
-    width: 500px;
-    height: 50vh;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    border-start-start-radius: 30px;
-    border-start-end-radius: 30px;
-    border-end-start-radius: 30px;
+    width: 400px;
+    height: 400px;
+  }
+  .Filter--Marka--Div,
+  .Filter--Model--Div,
+  .Filter--Years--Both--St,
+  .Filter--Years--Both--Nd,
+  .Filter--Location--Div,
+  .Filter--Prices--Div,
+  .Filter--PriceSlider {
+    font-size: 13px;
+  }
+  .arrowDowns {
+    width: 10px;
+  }
 
-    border-left: 7px solid rgba(216, 149, 72, 0.74);
-    border-top: 7px solid rgba(216, 149, 72, 0.74);
-    grid-template-areas:
-      "Filter--Search Filter--Search"
-      "Filter--Model Filter--Marka"
-      "Filter--Year Filter--Location"
-      "Filter--Prices Filter--PriceSlider"
-      "Filter--Submit Filter--Submit";
+  .arrowUps {
+    width: 10px;
+  }
+}
+@media (max-width: 620px) {
+  .Filter--Main {
+    width: 350px;
+    height: 400px;
+  }
+}
+@media (max-width: 430px) {
+  .Filter--Main {
+    height: 700px;
+    width: 350px;
+  }
+}
+@media (max-width: 400px) {
+  .Filter--Main {
+    height: 500px;
+    width: 350px;
   }
 }

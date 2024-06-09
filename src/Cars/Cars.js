@@ -15,6 +15,8 @@ import Password from "../Photos/password.svg";
 import Enter from "../Photos/enters.svg";
 import Contacts from "../Components/Contact";
 import Filters from "../Components/filter";
+import Benz from "../Photos/b.webp";
+import Filtersa from "../Photos/filter.svg";
 
 const Cars = () => {
   /* Login Show/Hide */
@@ -26,6 +28,9 @@ const Cars = () => {
   const [contacts, setContacts] = useState(false);
   const [contactUp, setContactUp] = useState(false);
   /* Contact Show/Hide */
+  const [filterBool, setFilterBool] = useState(true);
+  const [filterBoolUp, setFilterBoolUp] = useState(false);
+
   /*Gsap animation Start*/
   let menu = useRef(null);
   let Filter = useRef(null);
@@ -34,24 +39,46 @@ const Cars = () => {
   let left = useRef(null);
   let logins = useRef(null);
   let contact = useRef(null);
-
+  /* Product Blur */
+  const [prodBlur, setProdBlur] = useState(false);
+  const [mouseHov, setMouseHov] = useState(null);
   const [allInput, setAllInput] = useState({
-    Cars: [
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-      Range,
-    ],
+    Cars: [Benz, Benz, Benz, Benz, Benz, Benz, Benz, Benz],
   });
+  useEffect(() => {
+    if (mouseHov === null) {
+      setProdBlur(false);
+    } else {
+      setProdBlur(true);
+    }
+  }, [mouseHov]);
+  useEffect(() => {
+    if (filterBoolUp === true) {
+      gsap.fromTo(
+        Filter.current,
+        {
+          duration: 0.5,
+          x: 0,
+          y: 0,
+          ease: "power1.inOut",
+        },
+        { x: 1000, y: 0 }
+      );
+    }
+    if (filterBoolUp === false) {
+      gsap.fromTo(
+        Filter.current,
+        {
+          duration: 0.5,
+          x: 1000,
+          y: 0,
+          ease: "power1.inOut",
+        },
+        { x: 0, y: 0 }
+      );
+    }
+    console.log(filterBool);
+  }, [filterBoolUp]);
   useEffect(() => {
     if (contacts === true) {
       setScrollFreezed(true);
@@ -113,7 +140,6 @@ const Cars = () => {
       setLoginUp(false);
     }
   }, [loginUp]);
-  const [mouseHov, setMouseHov] = useState(null);
   useEffect(() => {
     var animation = gsap.timeline();
     animation
@@ -129,21 +155,17 @@ const Cars = () => {
       )
       .fromTo(
         Filter.current,
-        { opacity: 0, x: -500 },
+        { opacity: 0, x: 500 },
         { opacity: 1, duration: 0.5, x: 0 }
       )
       .fromTo(
         Product.current,
-        { opacity: 0, rotate: 90, x: 500, y: 500 },
+        { x: "150vw" },
         {
-          opacity: 1,
-          rotate: 0,
           x: 0,
-          y: 0,
           duration: 1,
           ease: "power3.out",
-        },
-        "-0.5>"
+        }
       )
       .fromTo(left.current, { opacity: 0 }, { opacity: 1, duration: 0.2 })
       .fromTo(right.current, { opacity: 0 }, { opacity: 1, duration: 0.2 });
@@ -231,7 +253,16 @@ const Cars = () => {
             </div>
             <div className="li-Icons">
               <div className="icon--ul"></div>
-              <img src={Hotel} className="Logos"></img>
+              <img
+                src={Hotel}
+                className="Logos"
+                onClick={() => {
+                  setFilterBoolUp(!filterBoolUp);
+                  setTimeout(() => {
+                    setFilterBool(!filterBool);
+                  }, 200);
+                }}
+              ></img>
               <li>სასტუმროები</li>
             </div>
             <div
@@ -258,13 +289,41 @@ const Cars = () => {
       </header>
       <body>
         <div className="body--Cars">
-          <div className="body--Cars--First">
-            <Filters ref={Filter} />
+          <div className="Search--OutFilter">
+            <input
+              type="text"
+              className="Search--OuterFilter--Search"
+              placeholder="სწრაფი ძებნა"
+            ></input>
           </div>
+          {filterBool === false ? (
+            <div
+              className="filter--Icon"
+              onClick={() => {
+                setFilterBool(true);
+                setFilterBoolUp(false);
+              }}
+            >
+              <img src={Filtersa}></img>
+            </div>
+          ) : null}
+          {filterBool === true ? (
+            <div className="body--Cars--First">
+              <Filters
+                firstState={(prev) => {
+                  setFilterBoolUp(prev);
+                }}
+                secondState={(prev) => {
+                  setFilterBool(prev);
+                }}
+                ref={Filter}
+              />
+            </div>
+          ) : null}
 
           <div className="body--Cars--Second">
             <div
-              className="left"
+              className="left--left"
               ref={left}
               onClick={() => {
                 gridleft();
@@ -273,7 +332,7 @@ const Cars = () => {
               <img src={Right}></img>
             </div>
             <div
-              className="right"
+              className={filterBoolUp === false ? "right" : "right--right"}
               ref={right}
               onClick={() => {
                 gridRight();
@@ -285,11 +344,32 @@ const Cars = () => {
               {allInput.Cars.map((e, i) => (
                 <div className={`cars--Each`}>
                   <div
-                    className={`cars--Each--Img${
-                      mouseHov == i || mouseHov == null ? "" : "blur"
-                    }`}
+                    className="hidden-div"
                     onMouseEnter={() => {
-                      console.log(i);
+                      setMouseHov(i);
+                    }}
+                    onMouseLeave={() => {
+                      setMouseHov(null);
+                    }}
+                  >
+                    <div className="hided-text">
+                      <h2>Mercedes Benz</h2>
+                      <p>ძრავა: 3.2 ბი-ტურბო</p>
+                      <p>მგზავრთა რაოდენობა: 4</p>
+                      <p>ფასი: 500 ლარი</p>
+                    </div>
+                    <p className="visible-text">სრულად ნახვა</p>
+                  </div>
+                  <div
+                    className={
+                      prodBlur === true && mouseHov !== i
+                        ? `cars--Each--Imgblur`
+                        : `cars--Each--Img`
+                    }
+                    // className={`cars--Each--Img${
+                    //   mouseHov == i || mouseHov == null ? "" : "blur"
+                    // }`}
+                    onMouseEnter={() => {
                       setMouseHov(i);
                     }}
                     onMouseLeave={() => {
@@ -298,13 +378,6 @@ const Cars = () => {
                   >
                     <img src={e}></img>
                   </div>
-                  <div className="cars-image-name">
-                    <h2>Mercedes Benz G-Class</h2>
-                    <div className="price--fullView">
-                      <p>ფასი:300ლარი</p>
-                    </div>
-                  </div>
-                  <div className=""></div>
                 </div>
               ))}
             </div>

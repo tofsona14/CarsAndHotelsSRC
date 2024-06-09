@@ -1,8 +1,9 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import DownArrow from "../Photos/down-arrow.svg";
+import Exit from "../Photos/exit.svg";
 import Slider from "react-slider";
 import "./Filter.css";
-const Filter = forwardRef((props, ref) => {
+const Filter = forwardRef(({ firstState, secondState }, ref) => {
   /* Sliders values */
   const MIN = 50;
   const MAX = 800;
@@ -64,11 +65,24 @@ const Filter = forwardRef((props, ref) => {
       return a;
     });
   }, [values]);
-
+  console.log(allInput.choosedPrice);
   return (
     <div className="Filter--Main--Main">
       <div className="Filter--Main--Main--HideTag">ფილტრი</div>
       <div className="Filter--Main" ref={ref}>
+        <div
+          className="filter--Close"
+          onClick={() => {
+            firstState(true);
+            setTimeout(() => {
+              secondState(false);
+            }, 200);
+          }}
+        >
+          <div className="filter--Close--Button">
+            <img src={Exit}></img>
+          </div>
+        </div>
         <div className="Filter--Search">
           <input
             type="text"
@@ -351,6 +365,11 @@ const Filter = forwardRef((props, ref) => {
                     <div
                       className="Filter--Dropdown--SameForEverone"
                       onClick={() => {
+                        setValues((prev) => {
+                          const a = [...prev];
+                          a[0] = e;
+                          return a;
+                        });
                         setAllInput((prev) => {
                           const a = { ...prev };
                           a.choosedPrice[0] = e;
@@ -400,6 +419,11 @@ const Filter = forwardRef((props, ref) => {
                     <div
                       className="Filter--Dropdown--SameForEverone"
                       onClick={() => {
+                        setValues((prev) => {
+                          const a = [...prev];
+                          a[1] = e;
+                          return a;
+                        });
                         setAllInput((prev) => {
                           const a = { ...prev };
                           a.choosedPrice[1] = e;

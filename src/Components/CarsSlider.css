@@ -1,0 +1,70 @@
+.CarsSlider--Wrapper {
+  position: relative;
+  width: 99.8vw;
+  height: 99vh;
+  background-color: blue;
+}
+.CarsSlider--Left {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.CarsSlider--Right {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 100%;
+}
+.CarsSlider--Left img {
+  cursor: pointer;
+  rotate: 90deg;
+  width: 50px;
+  height: 50px;
+}
+.CarsSlider--Right {
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+}
+.CarsSlider--Right img {
+  cursor: pointer;
+  rotate: 270deg;
+  width: 50px;
+  height: 50px;
+}
+
+.CarsSlider--Main--Main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.CarsSlider--Main {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column; /* Places items in a horizontal row */
+  grid-template-columns: repeat(auto, minmax(500px, auto));
+  grid-template-rows: repeat(1, auto);
+  overflow-x: auto; /* Enables horizontal scrolling */
+  width: 100%;
+  height: 99%;
+  grid-gap: 150px;
+  scroll-behavior: smooth;
+  place-items: center;
+}
+.CarsSlider--Main--Each {
+  width: 500px;
+  height: 500px;
+}
+.CarsSlider--Main img {
+  width: 100%;
+  height: 100%;
+}

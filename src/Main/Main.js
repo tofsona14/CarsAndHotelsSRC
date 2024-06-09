@@ -170,7 +170,6 @@ const Main = () => {
               </Link>
               <Link to="/cars">
                 <div className="li-Icons">
-                  <div className="icon--ul"></div>
                   <img src={Cars}></img>
                   <li className="">მანქანები</li>
                 </div>
