@@ -89,6 +89,7 @@ body {
   position: relative;
 }
 .ellipse-shape-divider {
+  margin-top: 1%;
   z-index: 2;
   position: absolute;
   display: flex;
@@ -172,7 +173,7 @@ a {
 }
 @media (max-width: 958px) {
   .header--Main nav ul {
-    width: 97%;
+    width: 96%;
     justify-content: space-between;
   }
 }
@@ -180,6 +181,53 @@ a {
   /* Styles for viewports that are at least 600 pixels wide */
   .header--Main nav ul li {
     font-size: 12px;
+  }
+  .ellipse-shape-divider {
+    margin-top: 1vh;
+  }
+  .main--Main img {
+    cursor: pointer;
+    width: 99vw;
+    height: 70vh;
+    background-color: black;
+  }
+  .main--Main img:hover {
+    cursor: pointer;
+    width: 99vw;
+    height: 60vh;
+    opacity: 0.5;
+  }
+}
+@media (max-width: 871px) {
+  /* Styles for viewports that are at least 600 pixels wide */
+
+  .main--Main img {
+    cursor: pointer;
+    width: 99vw;
+    height: 50vh;
+    background-color: black;
+  }
+  .main--Main img:hover {
+    cursor: pointer;
+    width: 99vw;
+    height: 50vh;
+    opacity: 0.5;
+  }
+}
+@media (max-width: 571px) {
+  /* Styles for viewports that are at least 600 pixels wide */
+
+  .main--Main img {
+    cursor: pointer;
+    width: 99vw;
+    height: 45vh;
+    background-color: black;
+  }
+  .main--Main img:hover {
+    cursor: pointer;
+    width: 99vw;
+    height: 45vh;
+    opacity: 0.5;
   }
 }
 @media (max-width: 505px) {
@@ -189,6 +237,15 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+  .header--Main nav ul {
+    width: 94%;
+  }
+  .li-Icons--choosed--main {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column !important;
   }
   .li-Icons--choosed {
     justify-content: center;
