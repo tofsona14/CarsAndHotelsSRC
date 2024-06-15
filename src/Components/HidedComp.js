@@ -6,7 +6,7 @@ import thirdImage from "../Photos/third--brabus.jpg";
 import fourthImage from "../Photos/fourth--brabus.jpg";
 import arrow from "../Photos/arrow.svg";
 
-const HidedComp = () => {
+const HidedComp = ({ firstState }) => {
   const [selectedImage, setSelectedImage] = useState(firstImage);
   const a = [firstImage, secondImage, thirdImage, fourthImage];
   return (
@@ -15,7 +15,21 @@ const HidedComp = () => {
         <div className="HidedComp--Main--Child--St">
           <div className="arrows">
             <div className="leftt">
-              <img src={arrow} className="left--arrowsssss"></img>
+              <img
+                src={arrow}
+                onClick={() => {
+                  setSelectedImage((prev) => {
+                    if (a.findIndex((image) => image === selectedImage) === 0) {
+                      return a[a.length - 1];
+                    } else {
+                      return a[
+                        a.findIndex((image) => image === selectedImage) - 1
+                      ];
+                    }
+                  });
+                }}
+                className="left--arrowsssss"
+              ></img>
             </div>
             <div className="rightt">
               <img
@@ -63,6 +77,18 @@ const HidedComp = () => {
               </div>
             );
           })}
+        </div>
+        <div className="HidedComp--Main--Child--Fourth">
+          <div className="addAndCancel">
+            <button
+              onClick={() => {
+                firstState(false);
+              }}
+            >
+              cancel
+            </button>
+            <button>add</button>
+          </div>
         </div>
       </div>
     </div>

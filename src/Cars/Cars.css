@@ -469,6 +469,10 @@ ul {
   scale: 1.2;
   transition: 1s;
 }
+.hideComponents {
+  z-index: 10;
+  position: absolute;
+}
 @media (max-width: 1420px) {
   .body--Cars {
     flex-direction: column;

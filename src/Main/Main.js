@@ -223,7 +223,9 @@ const Main = () => {
             <div className="line1"></div>
           </div>
         </div>
-        <img className="hotel" ref={imgNd} src={Hotel}></img>
+        <Link to="/hotels">
+          <img className="hotel" ref={imgNd} src={Hotel}></img>
+        </Link>
       </main>
     </div>
   );

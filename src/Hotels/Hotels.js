@@ -1,9 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
-import "./Cars.css";
+import "./Hotels.css";
 import { Link } from "react-router-dom";
 import { gsap, Power3 } from "gsap";
 import Right from "../Photos/right.svg";
-import Range from "../Photos/x.jpg";
 import Home from "../Photos/home.svg";
 import Car from "../Photos/car.svg";
 import Hotel from "../Photos/hotel.svg";
@@ -15,12 +14,12 @@ import Password from "../Photos/password.svg";
 import Enter from "../Photos/enters.svg";
 import Contacts from "../Components/Contact";
 import Filters from "../Components/filter";
-import Benz from "../Photos/b.webp";
-import Mazda from "../Photos/d.jpg";
+import Benz from "../Photos/Hot1.jpg";
+import Mazda from "../Photos/Hot2.jpg";
 import Filtersa from "../Photos/filter.svg";
 import HidedComp from "../Components/HidedComp";
 
-const Cars = () => {
+const Hotels = () => {
   /* Login Show/Hide */
   const [loginUp, setLoginUp] = useState(false);
   const [login, setLogin] = useState(false);
@@ -251,20 +250,31 @@ const Cars = () => {
           <ul>
             <Link to="/">
               <div className="li-Icons">
+                <div className="icon--ul"></div>
                 <img src={Home} className="Logos"></img>
                 <li>მთავარი</li>
               </div>
             </Link>
-            <div className="li-Icons--choosed">
-              <img src={Car} className="Logos"></img>
-              <li className="choosed--Cars">მანქანები</li>
-            </div>
-            <Link to="/Hotels">
+            <Link to="/cars">
               <div className="li-Icons">
-                <img src={Hotel} className="Logos"></img>
-                <li>სასტუმროები</li>
+                <img src={Car} className="Logos"></img>
+                <li className="choosed--Cars">მანქანები</li>
               </div>
             </Link>
+            <div className="li-Icons--choosed">
+              <div className="icon--ul"></div>
+              <img
+                src={Hotel}
+                className="Logos"
+                onClick={() => {
+                  setFilterBoolUp(!filterBoolUp);
+                  setTimeout(() => {
+                    setFilterBool(!filterBool);
+                  }, 200);
+                }}
+              ></img>
+              <li>სასტუმროები</li>
+            </div>
             <div
               className="li-Icons"
               onClick={() => {
@@ -401,4 +411,4 @@ const Cars = () => {
   );
 };
 
-export default Cars;
+export default Hotels;
