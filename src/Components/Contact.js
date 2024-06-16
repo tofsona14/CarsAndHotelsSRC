@@ -82,7 +82,6 @@ const Contact = React.forwardRef(
                   ref={contentRef}
                   contentEditable="true"
                   className="Big--Text"
-                  placeholder="მოგვწერეთ თქვენი შეკითხვა მაქს(200 ასო)"
                 >
                   {isPlaceholderVisible ? "მოგვწერეთ თქვენი კითხვა" : ""}
                 </div>

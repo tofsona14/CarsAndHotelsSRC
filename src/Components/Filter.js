@@ -3,6 +3,8 @@ import DownArrow from "../Photos/down-arrow.svg";
 import Exit from "../Photos/exit.svg";
 import Slider from "react-slider";
 import "./Filter.css";
+import Search from "../Photos/search.svg";
+
 const Filter = forwardRef(({ firstState, secondState }, ref) => {
   /* Sliders values */
   const MIN = 50;
@@ -84,25 +86,28 @@ const Filter = forwardRef(({ firstState, secondState }, ref) => {
           </div>
         </div>
         <div className="Filter--Search">
-          <input
-            type="text"
-            className="Filter--Search--Button"
-            placeholder="ძებნა..."
-            onClick={() => {
-              setFilterStates(() => {
-                const a = filterDefault;
-                a.Search = true;
-                return a;
-              });
-            }}
-            onChange={(arg) => {
-              setAllInput((prev) => {
-                const a = { ...prev };
-                a.search = arg.target.value;
-                return a;
-              });
-            }}
-          ></input>
+          <div className="Filter--Search--Child">
+            <input
+              type="text"
+              className="Filter--Search--Button"
+              placeholder="ძებნა..."
+              onClick={() => {
+                setFilterStates(() => {
+                  const a = filterDefault;
+                  a.Search = true;
+                  return a;
+                });
+              }}
+              onChange={(arg) => {
+                setAllInput((prev) => {
+                  const a = { ...prev };
+                  a.search = arg.target.value;
+                  return a;
+                });
+              }}
+            ></input>
+            <img src={Search}></img>
+          </div>
         </div>
         <div className="Filter--Marka">
           <div

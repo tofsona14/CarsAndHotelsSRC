@@ -7,7 +7,7 @@
   width: 100%;
   height: 100%;
   z-index: 5;
-  background-color: rgba(128, 128, 128, 0.534);
+  background-color: rgba(128, 128, 128, 0.838);
 }
 .contact--us {
   width: 100%;
@@ -39,7 +39,8 @@
   position: relative;
   width: 600px;
   height: 600px;
-  background-color: rgba(75, 30, 30, 0.844);
+  /* background-color: rgb(143, 99, 48); */
+  background-color: rgb(75, 30, 30);
 }
 .login .closeIcon {
   background-color: white;
@@ -56,8 +57,13 @@
   right: -1vw;
   top: -2vh;
   cursor: pointer;
+  z-index: 9;
 }
 .login--Inputs {
+  padding-top: 20px;
+  border-start-start-radius: 25px;
+  border-start-end-radius: 25px;
+  background-color: rgb(75, 30, 30);
   border: none;
   display: flex;
   flex-direction: column;
@@ -65,11 +71,11 @@
   align-items: center;
   gap: 20px;
   height: 30%;
-  width: 100%;
+  width: 80%;
 }
 .sss {
   display: flex;
-  width: 80%;
+  width: 90%;
   height: 40%;
   position: relative;
 }
@@ -118,11 +124,14 @@
   right: 10%;
 }
 .resetAndBut p {
+  margin-right: 10%;
+
   position: absolute;
   right: 0;
   top: 0;
 }
 .logInButAndIcon {
+  margin-right: 10%;
   cursor: pointer;
   position: absolute;
   right: 0;
@@ -142,11 +151,32 @@
   font-size: 11px;
 }
 .afterLogin {
+  background-color: rgb(75, 30, 30);
   color: white;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px dotted gray;
   width: 80%;
   height: 15vh;
-  border-bottom: 1px solid gray;
   position: relative;
+}
+.icons--Social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  top: 0;
+  background-color: rgb(75, 30, 30);
+}
+.icons--Social img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.icons--Social--Child {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
 }

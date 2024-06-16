@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import "./Login.css";
 import Exit from "../Photos/exit.svg";
 import Profile from "../Photos/profile.svg";
 import Password from "../Photos/password.svg";
 import Enter from "../Photos/enters.svg";
+import Fb from "../Photos/Facebook.svg";
+import Google from "../Photos/google.svg";
 
-const Login = ({ logins }) => {
-  const [loginUp, setLoginUp] = useState(false);
-  const [login, setLogin] = useState(false);
-  const [scrollFreezed, setScrollFreezed] = useState(false);
-
+const Login = forwardRef(({ loginsUp, loginsSecond }, logins) => {
   return (
     <div className="Login">
       <div className="login" ref={logins}>
@@ -17,13 +15,18 @@ const Login = ({ logins }) => {
           className="closeIcon"
           onClick={() => {
             setTimeout(() => {
-              setLogin(false);
+              loginsSecond(false);
             }, 200);
-            setLoginUp(true);
-            setScrollFreezed(false);
+            loginsUp(true);
           }}
         >
           <img src={Exit} className="close"></img>
+        </div>
+        <div className="icons--Social">
+          <div className="icons--Social--Child">
+            <img src={Fb}></img>
+            <img src={Google}></img>
+          </div>
         </div>
         <div className="login--Inputs">
           <div className="sss">
@@ -50,6 +53,6 @@ const Login = ({ logins }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Login;

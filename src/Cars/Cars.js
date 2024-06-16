@@ -3,22 +3,20 @@ import "./Cars.css";
 import { Link } from "react-router-dom";
 import { gsap, Power3 } from "gsap";
 import Right from "../Photos/right.svg";
-import Range from "../Photos/x.jpg";
 import Home from "../Photos/home.svg";
 import Car from "../Photos/car.svg";
 import Hotel from "../Photos/hotel.svg";
 import Contact from "../Photos/contact.svg";
 import User from "../Photos/enter.svg";
-import Exit from "../Photos/exit.svg";
-import Profile from "../Photos/profile.svg";
-import Password from "../Photos/password.svg";
-import Enter from "../Photos/enters.svg";
+
 import Contacts from "../Components/Contact";
 import Filters from "../Components/filter";
 import Benz from "../Photos/b.webp";
 import Mazda from "../Photos/d.jpg";
 import Filtersa from "../Photos/filter.svg";
 import HidedComp from "../Components/HidedComp";
+import Login from "../Components/Login";
+import Search from "../Photos/search.svg";
 
 const Cars = () => {
   /* Login Show/Hide */
@@ -189,6 +187,12 @@ const Cars = () => {
   const CarsExit = (prev) => {
     setOpenProduct(prev);
   };
+  const LoginExit = (prev) => {
+    setLogin(prev);
+  };
+  const LoginShow = (prev) => {
+    setLoginUp(prev);
+  };
   return (
     <div className="Main--Cars">
       {contacts === true ? (
@@ -206,44 +210,7 @@ const Cars = () => {
         </div>
       ) : null}
       {login === true ? (
-        <div className="Login">
-          <div className="login" ref={logins}>
-            <div
-              className="closeIcon"
-              onClick={() => {
-                setTimeout(() => {
-                  setLogin(false);
-                }, 200);
-                setLoginUp(true);
-                setScrollFreezed(false);
-              }}
-            >
-              <img src={Exit} className="close"></img>
-            </div>
-            <div className="login--Inputs">
-              <div className="sss">
-                <img src={Profile} className="iconUser"></img>
-                <input type="text" placeholder="Username"></input>
-              </div>
-              <div className="sss">
-                <input type="text" placeholder="Password"></input>
-                <img src={Password} className="iconUser"></img>
-              </div>
-            </div>
-            <div className="afterLogin">
-              <div className="resetAndBut">
-                <p>პაროლის აღდგენა</p>
-                <div className="logInButAndIcon">
-                  <button>შესვლა</button>
-                  <img src={Enter} className="iconUser"></img>
-                </div>
-              </div>
-            </div>
-            <div className="register">
-              <p>რეგისტრაცია</p>
-            </div>
-          </div>
-        </div>
+        <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
 
       <header className="header--Main">
@@ -290,11 +257,14 @@ const Cars = () => {
       <body>
         <div className="body--Cars">
           <div className="Search--OutFilter">
-            <input
-              type="text"
-              className="Search--OuterFilter--Search"
-              placeholder="სწრაფი ძებნა"
-            ></input>
+            <div className="Search--Outfilter--Child">
+              <input
+                type="text"
+                className="Search--OuterFilter--Search"
+                placeholder="სწრაფი ძებნა"
+              ></input>
+              <img src={Search}></img>
+            </div>
           </div>
           {filterBool === false ? (
             <div

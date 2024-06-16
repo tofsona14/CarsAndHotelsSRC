@@ -51,18 +51,32 @@
   align-items: center;
   background-color: rgba(143, 98, 48, 0.729);
 }
-
-.Filter--Search--Button {
+.Filter--Search img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+.Filter--Search--Child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   width: 80%;
   height: 40%;
+}
+
+.Filter--Search--Button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: white;
   border-radius: 15px;
   border: none;
   outline: none;
 }
-.Filter--Search--Button:active {
-  opacity: 0.4;
-}
+
 .Filter--Marka {
   grid-area: Filter--Marka;
   z-index: 5;

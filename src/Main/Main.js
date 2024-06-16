@@ -14,6 +14,7 @@ import Profile from "../Photos/profile.svg";
 import Password from "../Photos/password.svg";
 import Enter from "../Photos/enters.svg";
 import Contacts from "../Components/Contact";
+import Login from "../Components/Login";
 
 const Main = () => {
   /* Login States */
@@ -110,6 +111,12 @@ const Main = () => {
     setContactsUp(arg);
     setScrollFreezed(false);
   };
+  const LoginExit = (prev) => {
+    setLogin(prev);
+  };
+  const LoginShow = (prev) => {
+    setLoginUp(prev);
+  };
   return (
     <div className="Main--Main">
       {contacts === true ? (
@@ -120,44 +127,7 @@ const Main = () => {
         />
       ) : null}
       {login === true ? (
-        <div className="Login">
-          <div ref={logins} className="login">
-            <div
-              className="closeIcon"
-              onClick={() => {
-                setTimeout(() => {
-                  setLogin(false);
-                }, 200);
-                setLoginUp(true);
-                setScrollFreezed(false);
-              }}
-            >
-              <img src={Exit} className="close"></img>
-            </div>
-            <div className="login--Inputs">
-              <div className="sss">
-                <input type="text" placeholder="Username"></input>
-                <img src={Profile} className="iconUser"></img>
-              </div>
-              <div className="sss">
-                <input type="text" placeholder="Password"></input>
-                <img src={Password} className="iconUser"></img>
-              </div>
-            </div>
-            <div className="afterLogin">
-              <div className="resetAndBut">
-                <p>პაროლის აღდგენა</p>
-                <div className="logInButAndIcon">
-                  <button>შესვლა</button>
-                  <img src={Enter} className="iconUser"></img>
-                </div>
-              </div>
-            </div>
-            <div className="register">
-              <p>რეგისტრაცია</p>
-            </div>
-          </div>
-        </div>
+        <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
       <header className="header--Main">
         <nav ref={menu}>
