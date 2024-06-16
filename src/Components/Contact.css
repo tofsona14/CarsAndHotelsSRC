@@ -31,8 +31,19 @@
   justify-content: center;
   align-items: center;
 }
-
+.Contact--Content--h2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.Contact--Main--Both {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .Contact--Content {
+  display: flex;
   position: relative;
   width: 800px;
   height: 700px;
@@ -50,21 +61,21 @@
   display: flex;
   position: relative;
   justify-content: space-between;
-  width: 35%;
+  width: 100%;
   height: 30%;
 }
 .Second--Content {
   display: flex;
   position: relative;
   justify-content: space-between;
-  width: 35%;
+  width: 100%;
   height: 30%;
 }
 .Third--Content {
   display: flex;
   position: relative;
   justify-content: space-between;
-  width: 35%;
+  width: 100%;
 }
 .First--Content img {
   width: 30px;
@@ -105,27 +116,204 @@
 .First--Content p {
   margin: 0;
 }
+.Second--Half {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Second--Half--Child {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.Second--Half--Child input {
+  width: 380px;
+  height: 100px;
+}
+.Big--Text {
+  font-size: 13px;
+  position: relative;
+  color: black;
+  background-color: white;
+  width: 380px !important;
+  height: 400px !important;
+}
+
+.placeholder--p {
+  opacity: 0.7;
+}
+.Second--Half--Child button {
+  width: 380px;
+  height: 60px;
+}
+.Second--Half--Child button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
 @media (max-width: 1100px) {
   .Contact--Content {
     width: 650px;
-    height: 550px;
+    height: 650px;
+  }
+  .Second--Half--Child {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Second--Half--Child input {
+    width: 300px;
+    height: 100px;
+  }
+  .Big--Text {
+    font-size: 13px;
+    position: relative;
+    color: black;
+    background-color: white;
+    width: 300px !important;
+    height: 400px !important;
+  }
+
+  .placeholder--p {
+    opacity: 0.7;
+  }
+  .Second--Half--Child button {
+    width: 300px;
+    height: 60px;
   }
 }
 @media (max-width: 850px) {
   .Contact--Content {
     width: 550px;
-    height: 550px;
+    height: 650px;
+  }
+
+  .Second--Half--Child {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Second--Half--Child input {
+    width: 300px;
+    height: 100px;
+  }
+  .Big--Text {
+    font-size: 13px;
+    position: relative;
+    color: black;
+    background-color: white;
+    width: 300px !important;
+    height: 400px !important;
+  }
+
+  .placeholder--p {
+    opacity: 0.7;
+  }
+  .Second--Half--Child button {
+    width: 300px;
+    height: 60px;
   }
 }
 @media (max-width: 630px) {
   .Contact--Content {
-    width: 400px;
-    height: 550px;
+    width: 430px;
+    height: 750px;
+  }
+  .Contact--Main--Both {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 100%;
+  }
+  .Second--Half {
+    border: soid red;
+  }
+  .first--Half {
+    margin-top: 60px;
+  }
+  .Second--Half--Child {
+    margin-left: 2vw;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Second--Half--Child input {
+    width: 300px;
+    height: 50px;
+  }
+  .Big--Text {
+    font-size: 13px;
+    position: relative;
+    color: black;
+    background-color: white;
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .placeholder--p {
+    opacity: 0.7;
+  }
+  .Second--Half--Child button {
+    width: 300px;
+    height: 60px;
   }
 }
 @media (max-width: 469px) {
   .Contact--Content {
     width: 350px;
-    height: 550px;
+    height: 600px;
+  }
+  .Contact--Main--Both {
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: 100%;
+  }
+  .first--Half {
+    margin-left: 5%;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+  }
+  .First--Content {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 12px;
+    height: 30%;
+  }
+  .Second--Content {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    height: 30%;
+    font-size: 12px;
+  }
+  .Third--Content {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    font-size: 12px;
+    width: 100%;
+  }
+  .Big--Text {
+    font-size: 13px;
+    position: relative;
+    color: black;
+    background-color: white;
+    width: 300px !important;
+    height: 180px !important;
   }
 }

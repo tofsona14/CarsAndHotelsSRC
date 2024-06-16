@@ -175,11 +175,12 @@ const Main = () => {
                   <li className="">მანქანები</li>
                 </div>
               </Link>
-              <div className="li-Icons">
-                <div className="icon--ul"></div>
-                <img src={Hotels}></img>
-                <li>სასტუმროები</li>
-              </div>
+              <Link to="/hotels">
+                <div className="li-Icons">
+                  <img src={Hotels}></img>
+                  <li>სასტუმროები</li>
+                </div>
+              </Link>
               <div
                 className="li-Icons"
                 onClick={() => {
