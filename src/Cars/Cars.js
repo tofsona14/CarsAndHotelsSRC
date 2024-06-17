@@ -17,9 +17,13 @@ import Filtersa from "../Photos/filter.svg";
 import HidedComp from "../Components/HidedComp";
 import Login from "../Components/Login";
 import Search from "../Photos/search.svg";
+import Background from "../Photos/Hot1.jpg";
 
 const Cars = () => {
   /* Login Show/Hide */
+  const [blurBackground, setBlurBackground] = useState(
+    "body--cars--background"
+  );
   const [loginUp, setLoginUp] = useState(false);
   const [login, setLogin] = useState(false);
   const [scrollFreezed, setScrollFreezed] = useState(false);
@@ -256,6 +260,8 @@ const Cars = () => {
       </header>
       <body>
         <div className="body--Cars">
+          <div className={blurBackground}></div>
+          <div className="body--cars--background--shadowed"></div>
           <div className="Search--OutFilter">
             <div className="Search--Outfilter--Child">
               <input
@@ -313,31 +319,34 @@ const Cars = () => {
             <div className="cars--Container" ref={Product}>
               {allInput.Cars.map((e, i) => (
                 <div className={`cars--Each`}>
-                  <div
-                    className="hidden-div"
-                    onMouseEnter={() => {
-                      setMouseHov(i);
-                    }}
-                    onMouseLeave={() => {
-                      setMouseHov(null);
-                    }}
-                  >
-                    {mouseHov !== null ? (
-                      <div
-                        className="hided-text"
-                        onClick={() => {
-                          setOpenProduct(true);
-                        }}
-                      >
-                        <h2>Mercedes Benz</h2>
-                        <p>ძრავა: 3.2 ბი-ტურბო</p>
-                        <p>მგზავრთა რაოდენობა: 4</p>
-                        <p>ფასი: 500 ლარი</p>
-                      </div>
-                    ) : (
+                  {mouseHov === null || mouseHov === i ? (
+                    <div
+                      className="hidden-div"
+                      onMouseEnter={() => {
+                        setBlurBackground("body--cars--background--Blured");
+                        setMouseHov(i);
+                      }}
+                      onMouseLeave={() => {
+                        setBlurBackground("body--cars--background");
+                        setMouseHov(null);
+                      }}
+                    >
                       <p className="visible-text">მოკლე ინფორმაცია</p>
-                    )}
-                  </div>
+                      {mouseHov !== null ? (
+                        <div
+                          className="hided-text"
+                          onClick={() => {
+                            setOpenProduct(true);
+                          }}
+                        >
+                          <h2>Mercedes Benz</h2>
+                          <p>ძრავა: 3.2 ბი-ტურბო</p>
+                          <p>მგზავრთა რაოდენობა: 4</p>
+                          <p>ფასი: 500 ლარი</p>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
                   <div
                     className={
                       prodBlur === true && mouseHov !== i
@@ -348,9 +357,12 @@ const Cars = () => {
                     //   mouseHov == i || mouseHov == null ? "" : "blur"
                     // }`}
                     onMouseEnter={() => {
+                      setBlurBackground("body--cars--background--Blured");
+
                       setMouseHov(i);
                     }}
                     onMouseLeave={() => {
+                      setBlurBackground("body--cars--background");
                       setMouseHov(null);
                     }}
                   >

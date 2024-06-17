@@ -270,6 +270,9 @@ const Hotels = () => {
       </header>
       <body>
         <div className="body--Cars">
+          <div className="body--hotels--background"></div>
+          <div className="body--hotels--background--blur"></div>
+
           <div className="Search--OutFilter">
             <div className="Search--Outfilter--Child">
               <input
