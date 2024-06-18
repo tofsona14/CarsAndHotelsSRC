@@ -134,17 +134,10 @@ a {
 .choosed--Main {
   opacity: 0.4;
 }
-@media (max-width: 958px) {
-  .header--Main nav ul {
-    width: 96%;
-    justify-content: space-between;
-  }
-}
+
 @media (max-width: 871px) {
   /* Styles for viewports that are at least 600 pixels wide */
-  .header--Main nav ul li {
-    font-size: 12px;
-  }
+
   .ellipse-shape-divider {
     margin-top: 1vh;
   }
@@ -191,37 +184,5 @@ a {
     width: 99vw;
     height: 45vh;
     opacity: 0.5;
-  }
-}
-@media (max-width: 505px) {
-  /* Styles for viewports that are at least 600 pixels wide */
-  .header--Main nav ul .li-Icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  .header--Main nav ul {
-    width: 94%;
-  }
-  .li-Icons--choosed--main {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column !important;
-  }
-  .li-Icons--choosed {
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-}
-@media (max-width: 448px) {
-  /* Styles for viewports that are at least 600 pixels wide */
-  .header--Main nav ul li {
-  }
-  .header--Main img {
-    width: 20px !important;
-    height: 20px !important;
   }
 }

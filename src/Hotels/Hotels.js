@@ -1,29 +1,24 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Hotels.css";
-import { Link } from "react-router-dom";
 import { gsap, Power3 } from "gsap";
 import Right from "../Photos/right.svg";
-import Home from "../Photos/home.svg";
-import Car from "../Photos/car.svg";
-import Hotel from "../Photos/hotel.svg";
-import Contact from "../Photos/contact.svg";
-import User from "../Photos/enter.svg";
-import Exit from "../Photos/exit.svg";
-import Profile from "../Photos/profile.svg";
-import Password from "../Photos/password.svg";
-import Enter from "../Photos/enters.svg";
+import Contact2 from "../Photos/ContactOut.svg";
+import { NavbarTh } from "../Navbar/Navbar";
 import Contacts from "../Components/Contact";
 import Filters from "../Components/filter";
-import Benz from "../Photos/Hot1.jpg";
-import Mazda from "../Photos/Hot2.jpg";
+import Hot1 from "../Photos/Hot1.jpg";
+import Hot2 from "../Photos/Hot2.jpg";
 import Filtersa from "../Photos/filter.svg";
 import HidedComp from "../Components/HidedComp";
 import Login from "../Components/Login";
 import Search from "../Photos/search.svg";
-import { NavbarTh } from "../Navbar/Navbar";
+import Background from "../Photos/Hot1.jpg";
 
-const Hotels = () => {
+const Cars = () => {
   /* Login Show/Hide */
+  const [blurBackground, setBlurBackground] = useState(
+    "body--hotels--background"
+  );
   const [loginUp, setLoginUp] = useState(false);
   const [login, setLogin] = useState(false);
   const [scrollFreezed, setScrollFreezed] = useState(false);
@@ -48,7 +43,7 @@ const Hotels = () => {
   const [prodBlur, setProdBlur] = useState(false);
   const [mouseHov, setMouseHov] = useState(null);
   const [allInput, setAllInput] = useState({
-    Cars: [Benz, Mazda, Benz, Mazda, Benz, Benz, Benz, Benz],
+    Cars: [Hot1, Hot2, Hot1, Hot2, Hot1, Hot2, Hot1, Hot2],
   });
   useEffect(() => {
     if (mouseHov === null) {
@@ -91,7 +86,7 @@ const Hotels = () => {
         contact.current,
         {
           opacity: 0,
-          x: 1000,
+          x: -1000,
           y: -1000,
           rotate: 120,
         },
@@ -129,7 +124,7 @@ const Hotels = () => {
           y: 0,
           rotate: 0,
         },
-        { opacity: 1, x: 1000, y: -1000, rotate: 120, duration: 0.3 }
+        { opacity: 1, x: -1000, y: -1000, rotate: 120, duration: 0.3 }
       );
       setContactUp(false);
     }
@@ -225,7 +220,6 @@ const Hotels = () => {
       {login === true ? (
         <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
-
       <NavbarTh
         ref={menu}
         setLogin={setLoginHandler}
@@ -234,9 +228,18 @@ const Hotels = () => {
       />
       <body>
         <div className="body--Cars">
-          <div className="body--hotels--background"></div>
-          <div className="body--hotels--background--blur"></div>
-
+          <div className={blurBackground}></div>
+          <div className="wrap--Out--Icons"></div>
+          <div className="body--cars--background--shadowed"></div>
+          <div className="Filter--Out">
+            <img
+              src={Contact2}
+              onClick={() => {
+                setContacts(true);
+                setScrollFreezed(true);
+              }}
+            ></img>
+          </div>
           <div className="Search--OutFilter">
             <div className="Search--Outfilter--Child">
               <input
@@ -294,31 +297,34 @@ const Hotels = () => {
             <div className="cars--Container" ref={Product}>
               {allInput.Cars.map((e, i) => (
                 <div className={`cars--Each`}>
-                  <div
-                    className="hidden-div"
-                    onMouseEnter={() => {
-                      setMouseHov(i);
-                    }}
-                    onMouseLeave={() => {
-                      setMouseHov(null);
-                    }}
-                  >
-                    {mouseHov !== null ? (
-                      <div
-                        className="hided-text"
-                        onClick={() => {
-                          setOpenProduct(true);
-                        }}
-                      >
-                        <h2>Mercedes Benz</h2>
-                        <p>ძრავა: 3.2 ბი-ტურბო</p>
-                        <p>მგზავრთა რაოდენობა: 4</p>
-                        <p>ფასი: 500 ლარი</p>
-                      </div>
-                    ) : (
+                  {mouseHov === null || mouseHov === i ? (
+                    <div
+                      className="hidden-div"
+                      onMouseEnter={() => {
+                        setBlurBackground("body--hotels--background--Blured");
+                        setMouseHov(i);
+                      }}
+                      onMouseLeave={() => {
+                        setBlurBackground("body--hotels--background");
+                        setMouseHov(null);
+                      }}
+                    >
                       <p className="visible-text">მოკლე ინფორმაცია</p>
-                    )}
-                  </div>
+                      {mouseHov !== null ? (
+                        <div
+                          className="hided-text"
+                          onClick={() => {
+                            setOpenProduct(true);
+                          }}
+                        >
+                          <h2>Mercedes Benz</h2>
+                          <p>ძრავა: 3.2 ბი-ტურბო</p>
+                          <p>მგზავრთა რაოდენობა: 4</p>
+                          <p>ფასი: 500 ლარი</p>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
                   <div
                     className={
                       prodBlur === true && mouseHov !== i
@@ -329,9 +335,12 @@ const Hotels = () => {
                     //   mouseHov == i || mouseHov == null ? "" : "blur"
                     // }`}
                     onMouseEnter={() => {
+                      setBlurBackground("body--hotels--background--Blured");
+
                       setMouseHov(i);
                     }}
                     onMouseLeave={() => {
+                      setBlurBackground("body--hotels--background");
                       setMouseHov(null);
                     }}
                   >
@@ -352,4 +361,4 @@ const Hotels = () => {
   );
 };
 
-export default Hotels;
+export default Cars;

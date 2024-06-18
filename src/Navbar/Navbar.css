@@ -36,3 +36,25 @@
   width: 30px;
   height: 20px;
 }
+@media (max-width: 958px) {
+  .header--Main nav ul {
+    right: 2%;
+    width: 96%;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 871px) {
+  /* Styles for viewports that are at least 600 pixels wide */
+  .header--Main nav ul li {
+    font-size: 12px;
+  }
+}
+@media (max-width: 448px) {
+  /* Styles for viewports that are at least 600 pixels wide */
+  .header--Main nav ul li {
+  }
+  .header--Main img {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}

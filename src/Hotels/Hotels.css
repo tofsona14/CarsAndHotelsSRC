@@ -7,12 +7,82 @@
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.6;
+  transition: 0.4s;
 }
-.body--hotels--background--blur {
+
+.body--hotels--background--shadowed {
   position: absolute;
   background-color: black;
   overflow-x: hidden;
-  width: 100%;
+  width: 100vw;
   height: 89vh;
   opacity: 0.4;
+}
+.body--hotels--background--Blured {
+  position: absolute;
+  width: 100%;
+  height: 89vh;
+  background-image: url("../Photos/hotelBackgroundTry.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.6;
+  filter: blur(5px);
+  transition: 0.4s !important;
+}
+@media (max-width: 980px) {
+  .body--hotels--background {
+    position: absolute;
+    width: 100%;
+    height: 110vh;
+    background-image: url("../Photos/hotelBackground.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    transition: 1s;
+  }
+  .body--hotels--background--shadowed {
+    position: absolute;
+    background-color: black;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 110vh;
+    opacity: 0.4;
+  }
+  .body--hotels--background--Blured {
+    position: absolute;
+    width: 100%;
+    height: 110vh;
+    background-image: url("../Photos/hotelBackgroundTry.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    filter: blur(5px);
+    transition: 1s;
+  }
+}
+@media (max-width: 505px) {
+  /* Styles for viewports that are at least 600 pixels wide */
+  .header--Main nav ul .li-Icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header--Main nav ul {
+    width: 94%;
+  }
+  .li-Icons--choosed--main {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column !important;
+  }
+  .li-Icons--choosed {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
