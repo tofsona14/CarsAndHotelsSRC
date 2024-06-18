@@ -20,6 +20,7 @@ import Filtersa from "../Photos/filter.svg";
 import HidedComp from "../Components/HidedComp";
 import Login from "../Components/Login";
 import Search from "../Photos/search.svg";
+import { NavbarTh } from "../Navbar/Navbar";
 
 const Hotels = () => {
   /* Login Show/Hide */
@@ -196,6 +197,15 @@ const Hotels = () => {
   const LoginShow = (prev) => {
     setLoginUp(prev);
   };
+  const setLoginHandler = (prev) => {
+    setLogin(prev);
+  };
+  const setScrollFreezeHandler = (prev) => {
+    setScrollFreezed(prev);
+  };
+  const setContactsHandler = (prev) => {
+    setContacts(prev);
+  };
   return (
     <div className="Main--Cars">
       {contacts === true ? (
@@ -216,58 +226,12 @@ const Hotels = () => {
         <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
 
-      <header className="header--Main">
-        <nav className="ss" ref={menu}>
-          <ul>
-            <Link to="/">
-              <div className="li-Icons">
-                <div className="icon--ul"></div>
-                <img src={Home} className="Logos"></img>
-                <li>მთავარი</li>
-              </div>
-            </Link>
-            <Link to="/cars">
-              <div className="li-Icons">
-                <img src={Car} className="Logos"></img>
-                <li className="choosed--Cars">მანქანები</li>
-              </div>
-            </Link>
-            <div className="li-Icons--choosed">
-              <div className="icon--ul"></div>
-              <img
-                src={Hotel}
-                className="Logos"
-                onClick={() => {
-                  setFilterBoolUp(!filterBoolUp);
-                  setTimeout(() => {
-                    setFilterBool(!filterBool);
-                  }, 200);
-                }}
-              ></img>
-              <li>სასტუმროები</li>
-            </div>
-            <div
-              className="li-Icons"
-              onClick={() => {
-                setContacts(true);
-              }}
-            >
-              <img src={Contact} className="Logos"></img>
-              <li>კონტაქტი</li>
-            </div>
-            <div
-              className="li-Icons"
-              onClick={() => {
-                setLogin(true);
-                setScrollFreezed(true);
-              }}
-            >
-              <img src={User} className="Logos--user"></img>
-              <li>ავტორიზაცია</li>
-            </div>
-          </ul>
-        </nav>
-      </header>
+      <NavbarTh
+        ref={menu}
+        setLogin={setLoginHandler}
+        setScrollFreezed={setScrollFreezeHandler}
+        setContacts={setContactsHandler}
+      />
       <body>
         <div className="body--Cars">
           <div className="body--hotels--background"></div>

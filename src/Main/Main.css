@@ -32,44 +32,7 @@ body {
   height: 9.9vh;
   border-bottom: 1px solid white;
 }
-.header--Main {
-  background-color: rgba(75, 30, 30, 0.753);
-}
-.header--Main nav ul {
-  position: absolute;
-  top: 0;
-  width: 60vw;
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  right: 7px;
-}
-.header--Main nav .li-Icons--choosed--main {
-}
-.close {
-  width: 25px;
-  height: 15px;
-}
 
-.header--Main nav ul li {
-  font-family: "Niconne";
-  font-size: 12px;
-  font-weight: bold;
-  list-style-type: none;
-  color: white;
-  cursor: pointer;
-}
-.li-Icons--choosed--main {
-  color: white;
-  display: flex;
-  border-bottom: solid white;
-  border-radius: 5px;
-}
-.header--Main img {
-  width: 30px;
-  height: 20px;
-}
 .main--Main img {
   cursor: pointer;
   width: 99vw;

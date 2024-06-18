@@ -1,14 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Cars.css";
-import { Link } from "react-router-dom";
 import { gsap, Power3 } from "gsap";
 import Right from "../Photos/right.svg";
-import Home from "../Photos/home.svg";
-import Car from "../Photos/car.svg";
-import Hotel from "../Photos/hotel.svg";
-import Contact from "../Photos/contact.svg";
-import User from "../Photos/enter.svg";
-
+import Contact2 from "../Photos/ContactOut.svg";
+import { NavbarNd } from "../Navbar/Navbar";
 import Contacts from "../Components/Contact";
 import Filters from "../Components/filter";
 import Benz from "../Photos/b.webp";
@@ -91,7 +86,7 @@ const Cars = () => {
         contact.current,
         {
           opacity: 0,
-          x: 1000,
+          x: -1000,
           y: -1000,
           rotate: 120,
         },
@@ -129,7 +124,7 @@ const Cars = () => {
           y: 0,
           rotate: 0,
         },
-        { opacity: 1, x: 1000, y: -1000, rotate: 120, duration: 0.3 }
+        { opacity: 1, x: -1000, y: -1000, rotate: 120, duration: 0.3 }
       );
       setContactUp(false);
     }
@@ -197,6 +192,15 @@ const Cars = () => {
   const LoginShow = (prev) => {
     setLoginUp(prev);
   };
+  const setLoginHandler = (prev) => {
+    setLogin(prev);
+  };
+  const setScrollFreezeHandler = (prev) => {
+    setScrollFreezed(prev);
+  };
+  const setContactsHandler = (prev) => {
+    setContacts(prev);
+  };
   return (
     <div className="Main--Cars">
       {contacts === true ? (
@@ -216,52 +220,26 @@ const Cars = () => {
       {login === true ? (
         <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
-
-      <header className="header--Main">
-        <nav className="ss" ref={menu}>
-          <ul>
-            <Link to="/">
-              <div className="li-Icons">
-                <img src={Home} className="Logos"></img>
-                <li>მთავარი</li>
-              </div>
-            </Link>
-            <div className="li-Icons--choosed">
-              <img src={Car} className="Logos"></img>
-              <li className="choosed--Cars">მანქანები</li>
-            </div>
-            <Link to="/Hotels">
-              <div className="li-Icons">
-                <img src={Hotel} className="Logos"></img>
-                <li>სასტუმროები</li>
-              </div>
-            </Link>
-            <div
-              className="li-Icons"
-              onClick={() => {
-                setContacts(true);
-              }}
-            >
-              <img src={Contact} className="Logos"></img>
-              <li>კონტაქტი</li>
-            </div>
-            <div
-              className="li-Icons"
-              onClick={() => {
-                setLogin(true);
-                setScrollFreezed(true);
-              }}
-            >
-              <img src={User} className="Logos--user"></img>
-              <li>ავტორიზაცია</li>
-            </div>
-          </ul>
-        </nav>
-      </header>
+      <NavbarNd
+        ref={menu}
+        setLogin={setLoginHandler}
+        setScrollFreezed={setScrollFreezeHandler}
+        setContacts={setContactsHandler}
+      />
       <body>
         <div className="body--Cars">
           <div className={blurBackground}></div>
+          <div className="wrap--Out--Icons"></div>
           <div className="body--cars--background--shadowed"></div>
+          <div className="Filter--Out">
+            <img
+              src={Contact2}
+              onClick={() => {
+                setContacts(true);
+                setScrollFreezed(true);
+              }}
+            ></img>
+          </div>
           <div className="Search--OutFilter">
             <div className="Search--Outfilter--Child">
               <input

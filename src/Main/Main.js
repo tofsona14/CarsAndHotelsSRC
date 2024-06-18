@@ -4,17 +4,9 @@ import Car from "../Photos/gelik.webp";
 import Hotel from "../Photos/hotel.webp";
 import { Link } from "react-router-dom";
 import { gsap, Power3 } from "gsap";
-import Home from "../Photos/home.svg";
-import Cars from "../Photos/car.svg";
-import Hotels from "../Photos/hotel.svg";
-import Contact from "../Photos/contact.svg";
-import User from "../Photos/enter.svg";
-import Exit from "../Photos/exit.svg";
-import Profile from "../Photos/profile.svg";
-import Password from "../Photos/password.svg";
-import Enter from "../Photos/enters.svg";
 import Contacts from "../Components/Contact";
 import Login from "../Components/Login";
+import { Navbar } from "../Navbar/Navbar";
 
 const Main = () => {
   /* Login States */
@@ -32,7 +24,7 @@ const Main = () => {
   let logins = useRef(null);
   let contact = useRef(null);
   useEffect(() => {
-    if (login == true) {
+    if (login === true) {
       gsap.fromTo(
         logins.current,
         { opacity: 0, x: 1000, y: -1000, rotate: 120 },
@@ -70,7 +62,7 @@ const Main = () => {
     }
   }, [loginUp]);
   useEffect(() => {
-    if (scrollFreezed == true) {
+    if (scrollFreezed === true) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -83,11 +75,11 @@ const Main = () => {
         "ul",
         {
           y: -150,
+          x: 0,
           repeat: 1, // Infinite repeat
-          yoyo: true,
           duration: 0.5,
         },
-        { y: 3 }
+        { y: 0, x: 0 }
       )
       .fromTo(
         Slogan.current,
@@ -117,6 +109,15 @@ const Main = () => {
   const LoginShow = (prev) => {
     setLoginUp(prev);
   };
+  const setLoginHandler = (prev) => {
+    setLogin(prev);
+  };
+  const setScrollFreezeHandler = (prev) => {
+    setScrollFreezed(prev);
+  };
+  const setContactsHandler = (prev) => {
+    setContacts(prev);
+  };
   return (
     <div className="Main--Main">
       {contacts === true ? (
@@ -129,53 +130,12 @@ const Main = () => {
       {login === true ? (
         <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
-      <header className="header--Main">
-        <nav ref={menu}>
-          <ul>
-            <ul>
-              <Link to="/">
-                <div className="li-Icons--choosed--main">
-                  <img src={Home}></img>
-                  <li className="choosed--Cars">მთავარი</li>
-                </div>
-              </Link>
-              <Link to="/cars">
-                <div className="li-Icons">
-                  <img src={Cars}></img>
-                  <li className="">მანქანები</li>
-                </div>
-              </Link>
-              <Link to="/hotels">
-                <div className="li-Icons">
-                  <img src={Hotels}></img>
-                  <li>სასტუმროები</li>
-                </div>
-              </Link>
-              <div
-                className="li-Icons"
-                onClick={() => {
-                  setContacts(true);
-                  setScrollFreezed(true);
-                }}
-              >
-                <img src={Contact}></img>
-                <li>კონტაქტი</li>
-              </div>
-              <div
-                className="li-Icons"
-                onClick={() => {
-                  setLogin(true);
-                  setScrollFreezed(true);
-                }}
-              >
-                <div className="icon--ul"></div>
-                <img src={User}></img>
-                <li>ავტორიზაცია</li>
-              </div>
-            </ul>
-          </ul>
-        </nav>
-      </header>
+      <Navbar
+        ref={menu}
+        setLogin={setLoginHandler}
+        setScrollFreezed={setScrollFreezeHandler}
+        setContacts={setContactsHandler}
+      />
       <main className="main--Main">
         <Link to="/Cars" ref={imgSt}>
           <img src={Car}></img>
