@@ -15,6 +15,8 @@ import Search from "../Photos/search.svg";
 import { SliderHotel } from "../Components/Slider";
 
 const Cars = () => {
+  const [rightt, setRightt] = useState(false);
+  const [lefts, setLefts] = useState(false);
   /* Login Show/Hide */
 
   const [loginUp, setLoginUp] = useState(false);
@@ -39,7 +41,18 @@ const Cars = () => {
   /* Product Blur */
   const [prodBlur, setProdBlur] = useState(false);
   const [mouseHov, setMouseHov] = useState(null);
-
+  useEffect(() => {
+    if (rightt === true) {
+      Product.current.scrollLeft += 600;
+      setRightt(false);
+    }
+  }, [rightt]);
+  useEffect(() => {
+    if (lefts === true) {
+      Product.current.scrollLeft -= 600;
+      setLefts(false);
+    }
+  }, [lefts]);
   useEffect(() => {
     if (mouseHov === null) {
       setProdBlur(false);
@@ -193,6 +206,12 @@ const Cars = () => {
   const setOpenProdHandler = (prev) => {
     setOpenProduct(prev);
   };
+  const goRight = (prev) => {
+    setRightt(prev);
+  };
+  const goLeft = (prev) => {
+    setLefts(prev);
+  };
   return (
     <div className="Main--Cars">
       {contacts === true ? (
@@ -219,6 +238,8 @@ const Cars = () => {
         setContacts={setContactsHandler}
       />
       <SliderHotel
+        gridRights={goRight}
+        gridlefts={goLeft}
         setContacts={setContactsHandler}
         setScrollFreezed={setScrollFreezeHandler}
         setOpenProduct={setOpenProdHandler}

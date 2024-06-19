@@ -11,7 +11,10 @@ import Hot1 from "../Photos/Hot1.jpg";
 import Hot2 from "../Photos/Hot2.jpg";
 
 const SliderCar = forwardRef(
-  ({ setScrollFreezed, setContacts, setOpenProduct }, ref) => {
+  (
+    { setScrollFreezed, setContacts, setOpenProduct, gridRights, gridlefts },
+    ref
+  ) => {
     const [blurBackground, setBlurBackground] = useState(
       "body--cars--background"
     );
@@ -26,12 +29,6 @@ const SliderCar = forwardRef(
     let right = useRef(null);
     let left = useRef(null);
 
-    const gridRight = () => {
-      Product.current.scrollLeft += 400;
-    };
-    const gridleft = () => {
-      Product.current.scrollLeft -= 400;
-    };
     const [allInput, setAllInput] = useState({
       Cars: [Benz, Mazda, Benz, Mazda, Benz, Benz, Benz, Benz],
     });
@@ -116,7 +113,7 @@ const SliderCar = forwardRef(
               className="left--left"
               ref={left}
               onClick={() => {
-                gridleft();
+                gridlefts(true);
               }}
             >
               <img src={Right}></img>
@@ -125,7 +122,7 @@ const SliderCar = forwardRef(
               className={filterBoolUp === false ? "right" : "right--right"}
               ref={right}
               onClick={() => {
-                gridRight();
+                gridRights(true);
               }}
             >
               <img src={Right}></img>
@@ -197,7 +194,10 @@ const SliderCar = forwardRef(
   }
 );
 const SliderHotel = forwardRef(
-  ({ setScrollFreezed, setContacts, setOpenProduct }, ref) => {
+  (
+    { setScrollFreezed, setContacts, setOpenProduct, gridRights, gridlefts },
+    ref
+  ) => {
     const [blurBackground, setBlurBackground] = useState(
       "body--hotels--background"
     );
@@ -212,12 +212,6 @@ const SliderHotel = forwardRef(
     let right = useRef(null);
     let left = useRef(null);
 
-    const gridRight = () => {
-      Product.current.scrollLeft += 400;
-    };
-    const gridleft = () => {
-      Product.current.scrollLeft -= 400;
-    };
     const [allInput, setAllInput] = useState({
       Cars: [Hot1, Hot2, Hot1, Hot2, Hot1, Hot2, Hot1, Hot2],
     });
@@ -302,7 +296,7 @@ const SliderHotel = forwardRef(
               className="left--left"
               ref={left}
               onClick={() => {
-                gridleft();
+                gridlefts(true);
               }}
             >
               <img src={Right}></img>
@@ -311,7 +305,7 @@ const SliderHotel = forwardRef(
               className={filterBoolUp === false ? "right" : "right--right"}
               ref={right}
               onClick={() => {
-                gridRight();
+                gridRights(true);
               }}
             >
               <img src={Right}></img>
