@@ -5,6 +5,7 @@ import Filter from "./Components/filter.js";
 import Hotels from "./Hotels/Hotels.js";
 import Login from "./Components/Login.js";
 import { Navbar } from "./Navbar/Navbar.js";
+import { SliderCar } from "./Components/Slider.js";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/Contact" element={<Filter />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Navbar" element={<Navbar />} />
+        <Route path="/Packets" element={<SliderCar />} />
       </Routes>
     </BrowserRouter>
   );

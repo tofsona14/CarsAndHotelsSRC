@@ -32,15 +32,12 @@ const Navbar = forwardRef(
                 <li>სასტუმროები</li>
               </div>
             </Link>
-            <div
-              className="li-Icons"
-              onClick={() => {
-                setContacts(true);
-              }}
-            >
-              <img src={Contact} className="Logos"></img>
-              <li>პაკეტები</li>
-            </div>
+            <Link to="/Packets">
+              <div className="li-Icons">
+                <img src={Contact} className="Logos"></img>
+                <li>პაკეტები</li>
+              </div>
+            </Link>
             <div
               className="li-Icons"
               onClick={() => {
@@ -79,15 +76,12 @@ const NavbarNd = forwardRef(
                 <li>სასტუმროები</li>
               </div>
             </Link>
-            <div
-              className="li-Icons"
-              onClick={() => {
-                setContacts(true);
-              }}
-            >
-              <img src={Contact} className="Logos"></img>
-              <li>პაკეტები</li>
-            </div>
+            <Link to="/Packets">
+              <div className="li-Icons">
+                <img src={Contact} className="Logos"></img>
+                <li>პაკეტები</li>
+              </div>
+            </Link>
             <div
               className="li-Icons"
               onClick={() => {
@@ -128,15 +122,59 @@ const NavbarTh = forwardRef(
                 <li>სასტუმროები</li>
               </div>
             </Link>
+            <Link to="/Packets">
+              <div className="li-Icons">
+                <img src={Contact} className="Logos"></img>
+                <li>პაკეტები</li>
+              </div>
+            </Link>
             <div
               className="li-Icons"
               onClick={() => {
-                setContacts(true);
+                setLogin(true);
+                setScrollFreezed(true);
               }}
             >
-              <img src={Contact} className="Logos"></img>
-              <li>პაკეტები</li>
+              <img src={User} className="Logos"></img>
+              <li>ავტორიზაცია</li>
             </div>
+          </ul>
+        </nav>
+      </header>
+    );
+  }
+);
+const NavbarFourth = forwardRef(
+  ({ setLogin, setContacts, setScrollFreezed }, menu) => {
+    return (
+      <header className="header--Main">
+        <nav className="ss" ref={menu}>
+          <ul>
+            <Link to="/">
+              <div className="li-Icons">
+                <img src={Home} className="Logos"></img>
+                <li>მთავარი</li>
+              </div>
+            </Link>
+            <Link to="/Cars">
+              <div className="li-Icons">
+                <img src={Car} className="Logos"></img>
+                <li className="choosed--Cars">მანქანები</li>
+              </div>
+            </Link>
+            <Link to="/Hotels">
+              <div className="li-Icons">
+                <img src={Hotel} className="Logos"></img>
+                <li>სასტუმროები</li>
+              </div>
+            </Link>
+
+            <Link to="/Packets">
+              <div className="li-Icons--choosed">
+                <img src={Contact} className="Logos"></img>
+                <li>პაკეტები</li>
+              </div>
+            </Link>
             <div
               className="li-Icons"
               onClick={() => {
@@ -154,4 +192,4 @@ const NavbarTh = forwardRef(
   }
 );
 
-export { Navbar, NavbarNd, NavbarTh };
+export { Navbar, NavbarNd, NavbarTh, NavbarFourth };
