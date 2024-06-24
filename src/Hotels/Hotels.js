@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Hotels.css";
-import { NavbarTh } from "../Navbar/Navbar";
+import { Navbar } from "../Navbar/Navbar";
 import { gsap, Power3 } from "gsap";
 import Right from "../Photos/right.svg";
 import Contact2 from "../Photos/ContactOut.svg";
@@ -99,9 +99,6 @@ const Cars = () => {
         },
         { opacity: 1, x: 0, y: 0, rotate: 0, duration: 0.5 }
       );
-      console.log(contacts);
-      console.log(contacts);
-      console.log(contact.current);
     } else {
       setScrollFreezed(false);
     }
@@ -231,7 +228,8 @@ const Cars = () => {
       {login === true ? (
         <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
-      <NavbarTh
+      <Navbar
+        setThird="li-Icons--choosed"
         ref={menu}
         setLogin={setLoginHandler}
         setScrollFreezed={setScrollFreezeHandler}

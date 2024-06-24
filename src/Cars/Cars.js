@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Cars.css";
 import { gsap, Power3 } from "gsap";
-import { NavbarNd } from "../Navbar/Navbar";
+import { Navbar } from "../Navbar/Navbar";
 
 import Contacts from "../Components/Contact";
 
@@ -226,7 +226,8 @@ const Cars = () => {
       {login === true ? (
         <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
-      <NavbarNd
+      <Navbar
+        setSecond="li-Icons--choosed"
         ref={menu}
         setLogin={setLoginHandler}
         setScrollFreezed={setScrollFreezeHandler}
@@ -239,6 +240,8 @@ const Cars = () => {
         setScrollFreezed={setScrollFreezeHandler}
         setOpenProduct={setOpenProdHandler}
       />
+      {console.log(contact)}
+      {console.log("ass")}
     </div>
   );
 };

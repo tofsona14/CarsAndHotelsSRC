@@ -1,11 +1,13 @@
-import React from "react";
-import { NavbarFourth } from "../Navbar/Navbar";
-
+import React, { useState, useRef } from "react";
+import "./Packets.css";
+import { Navbar } from "../Navbar/Navbar";
+import PacketsSlider from "./PacketsSlider";
 const Packets = () => {
   return (
-    <div className="Packets--Main">
-      <NavbarFourth />
-    </div>
+    <>
+      <Navbar setFourth="li-Icons--choosed" />
+      <PacketsSlider />
+    </>
   );
 };
 

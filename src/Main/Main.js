@@ -131,6 +131,7 @@ const Main = () => {
         <Login loginsSecond={LoginExit} loginsUp={LoginShow} ref={logins} />
       ) : null}
       <Navbar
+        setFirst="li-Icons--choosed"
         ref={menu}
         setLogin={setLoginHandler}
         setScrollFreezed={setScrollFreezeHandler}

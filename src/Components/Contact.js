@@ -9,7 +9,9 @@ const Contact = React.forwardRef(
   ({ setParentState, setParentSecondState }, ref) => {
     const [isPlaceholderVisible, setIsPlaceholderVisible] = useState(true);
     const contentRef = useRef(null); // Create a ref for the contenteditable div
-
+    console.log(contentRef.current);
+    console.log("s");
+    console.log(contentRef.current);
     const handleFocus = () => {
       if (isPlaceholderVisible) {
         contentRef.current.textContent = ""; // Clear the text directly using the ref
@@ -82,9 +84,13 @@ const Contact = React.forwardRef(
                   ref={contentRef}
                   contentEditable="true"
                   className="Big--Text"
+                  style={{
+                    color: isPlaceholderVisible ? "gray" : "black", // Adjust colors here
+                  }}
                 >
                   {isPlaceholderVisible ? "მოგვწერეთ თქვენი კითხვა" : ""}
                 </div>
+                {console.log(contentRef)}
                 <button>გაგზავნა</button>
               </div>
             </div>
