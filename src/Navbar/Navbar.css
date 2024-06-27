@@ -1,15 +1,20 @@
 .header--Main {
   background-color: rgba(75, 30, 30, 0.753);
 }
+.header--Main nav {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
 .header--Main nav ul {
   position: absolute;
-  top: 0;
-  width: 60vw;
+  width: 50vw;
   height: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  right: 10vw;
 }
 .header--Main nav .li-Icons--choosed--main {
 }
@@ -35,6 +40,24 @@
 .header--Main img {
   width: 30px;
   height: 20px;
+}
+.Logo--Currency--Language {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.Logo--Currency--Language img {
+  width: 10%;
+  margin-left: 20px;
+  height: 100%;
+}
+.language--img {
+  position: absolute;
+  right: 20px;
+  width: 50px !important;
+  height: 50px !important;
 }
 @media (max-width: 958px) {
   .header--Main nav ul {

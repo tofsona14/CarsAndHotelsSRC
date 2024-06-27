@@ -6,6 +6,7 @@ import Hotels from "./Hotels/Hotels.js";
 import Login from "./Components/Login.js";
 import { Navbar } from "./Navbar/Navbar.js";
 import Packets from "./Packets/Packets.js";
+import Study from "./study/Study.js";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Navbar" element={<Navbar />} />
         <Route path="/Packets" element={<Packets />} />
+        <Route path="/Study" element={<Study />} />
       </Routes>
     </BrowserRouter>
   );

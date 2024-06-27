@@ -7,6 +7,8 @@ import Car from "../Photos/car.svg";
 import Hotel from "../Photos/hotel.svg";
 import Contact from "../Photos/packets.svg";
 import User from "../Photos/enter.svg";
+import Logo from "../Photos/logo.jpg";
+import language from "../Photos/eng.png";
 // "li-Icons--choosed";
 const Navbar = forwardRef(
   (
@@ -23,6 +25,10 @@ const Navbar = forwardRef(
   ) => {
     return (
       <header className="header--Main">
+        <div className="Logo--Currency--Language">
+          <img src={Logo}></img>
+          <img className="language--img" src={language}></img>
+        </div>
         <nav className="ss" ref={menu}>
           <ul>
             <Link to="/">
