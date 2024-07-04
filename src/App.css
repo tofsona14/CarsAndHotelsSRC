@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+/* .div {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 40vh;
+  background-color: rgb(173, 128, 128);
+}
+.secondary--div {
+  font-size: 40px;
+} */

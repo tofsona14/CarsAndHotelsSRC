@@ -39,6 +39,9 @@ const LeftComp = ({ first, title, second, True, iden }) => {
           </div>
         </div>
       </div>
+      <div>
+        <button className="bg-blue-500">buttons</button>
+      </div>
     </>
   );
 };
